@@ -1,0 +1,651 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 40px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 20px;
+}
+h5 {
+    font-size: 30px;
+}
+h6 {
+    font-size: 16px;
+}
+
+.header {
+    height: 100px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 40px 200px 0 0;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    position: relative;
+    left: 50%;
+}
+
+.header__text {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-size: 24px;
+}
+
+.header__text:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__text::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+
+.header__text:hover::after {
+    transform: scaleX(1);
+}
+
+
+.offer {
+    height: 780px;
+    position: relative;
+    margin: -20px auto 0;
+    background: #000;
+    color: #fff;
+    
+}
+
+.offer__block {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.offer__block>h1 {
+    font-size: 100px;
+    padding-top: 50px;
+}
+
+.offer__img-books {
+    position: absolute;
+    left: 50%;
+    padding: 100px 0 0 150px;
+}
+
+.offer__block>h1>a {
+    font-size: 48px;
+}
+
+
+.catalog {
+    height: 250px;
+    background: #d9dad9;
+    text-align: center;
+    color: #000;
+}
+
+.catalog__blocks {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.catalog__book, .catalog__printer, .catalog__pc {
+    padding: 50px 30px;
+    margin: auto 20px;
+}
+
+.catalog__order {
+    margin: auto 0;
+    border: 4px solid #ff89e0;
+    background: #fff;
+    font-size: 30px;
+    padding: 20px 80px;
+}
+
+.catalog__order:hover {
+    background: #ff89e0;
+    border-color: #fff;
+}
+
+
+.our-history {
+    position: relative;
+    text-align: center;
+    color: #000;
+}
+
+.our-history>h2 {
+    padding: 100px 0 30px;
+    font-size: 40px;
+}
+
+.our-history__bold {
+    font-weight: 700;
+}
+
+
+
+.publish-print {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.publish-print>h2 {
+    padding: 100px 0 40px;
+    font-size: 40px;
+}
+
+
+/* слайдер1 */
+.publish-print__slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.sliderimg1 {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+  
+.arr1 {
+    position: relative;
+    margin: auto 0; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: rgba(255,255,255,1);
+    border: none;
+    outline: none;
+    transition: background-color 0.5s ease;
+}
+  
+.arr1:hover {
+    background-color: rgba(255,255,255,0.7);
+}
+  
+.arr1.prev1 {
+    left: 0;
+}
+  
+.arr1.next1 {
+    right: 0;
+}
+
+
+.online-edition {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.online-edition>h2 {
+    padding: 100px 0 30px;
+    font-size: 40px;
+}
+
+/* слайдер2 */
+.online-edition__slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.sliderimg2 {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+  
+.arr2 {
+    position: relative;
+    margin: auto 0; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    transition: background-color 0.5s ease;
+}
+  
+.arr2:hover {
+    background-color: rgba(255,255,255,0.7);
+}
+  
+.arr2.prev2 {
+    left: 0;
+}
+  
+.arr2.next2 {
+    right: 0;
+}
+
+
+.for-whom {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.for-whom>h2 {
+    padding: 100px 0 40px;
+    font-size: 40px;
+}
+
+.for-whom__blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.for-whom__publishing-house>h5, .for-whom__author>h5, .for-whom__institution>h5, .for-whom__corporate-clients>h5 {
+    padding-top: 15px;
+    font-size: 30px;
+}
+
+
+.advantages {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.advantages>h2 {
+    padding: 80px 0 40px;
+    font-size: 40px;
+}
+
+.advantages__blocks {
+    display: flex;
+    justify-content: space-between;
+    background: #d9dad9;
+    padding: 40px 200px 40px 60px;
+}
+
+.advantages__text {
+    text-align: left;
+    line-height: 50px;
+}
+
+.advantages__medal {
+    position: absolute;
+    right: 50%;
+    margin: 50px -70px 0;
+}
+
+
+.how-we-work {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.how-we-work>h2 {
+    padding: 100px 0 40px;
+    font-size: 40px;
+}
+
+.how-we-work__blocks {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.how-we-work__calculation-cost>h5, .how-we-work__conclusion-agreements>h5, .how-we-work__original-layout>h5, .how-we-work__seal-circulation>h5 {
+    padding: 40px 0 20px;
+    font-size: 30px;
+}
+
+
+.equipment {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.equipment__blocks {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.equipment__text>h2 {
+    padding: 40px 0 10px;
+    font-size: 40px;
+}
+.equipment__text>h3 {
+    margin-top: 40px;
+}
+
+
+.reviews {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.reviews>h2 {
+    padding: 100px 0 40px;
+    font-size: 40px;
+}
+
+/* слайдер3 */
+.reviews__slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.sliderimg3 {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+  
+.arr3 {
+    position: relative;
+    margin: auto 0; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    transition: background-color 0.5s ease;
+}
+  
+.arr3:hover {
+    background-color: rgba(255,255,255,0.7);
+}
+  
+.arr3.prev3 {
+    left: 0;
+}
+  
+.arr3.next3 {
+    right: 0;
+}
+
+
+.order-print-calculation {
+    position: relative;
+    margin: 0 auto;
+    width: 800px;
+    text-align: center;
+    color: #000;
+}
+
+.order-print-calculation>h2 {
+    padding: 100px 0 40px;
+    font-size: 40px;
+}
+
+.order-print-calculation__blocks>h6 {
+    font-size: 18px;
+    text-align: left;
+}
+
+.order-print-calculation__download {
+    background: #fb020e;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 20px;
+}
+
+.order-print-calculation__download:hover {
+    background: #c50000;
+}
+
+.order-print-calculation__blocks{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.print-calculator {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.print-calculator>h2 {
+    padding: 100px 0 0px;
+    font-size: 36px;
+}
+
+.print-calculator__blocks {
+    color: #5a5959;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    background: #d9dad9;
+    padding: 40px 100px;
+    margin-top: 50px;
+}
+
+.print-calculator__col1>h5, .print-calculator__col2>h5 {
+    font-size: 18px;
+    text-align: left;
+    color: #5a5959;
+}
+
+.print-calculator__order {
+    background: #fb020e;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 70px;
+    margin: 30px auto;
+}
+
+.print-calculator__order:hover {
+    background: #c50000;
+}
+
+.print-calculator__col2>h6 {
+    text-align: center;
+}
+
+.print-calculator__col1>input, .print-calculator__col2>input {
+    width: 260px;
+    height: 50px;
+    font-size: 24px;
+    padding-left: 20px;
+    margin: 10px 0 20px;
+}
+
+.print-calculator__col3>h5 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.print-calculator__for-indent {
+    padding-bottom: 30px;
+}
+
+.print-calculator__col3>h3 {
+    padding-top: 20px;
+}
+
+
+.make-book {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+    padding: 50px 0 20px;
+}
+
+
+.make-book__btn-order {
+    background: #fb020e;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 70px;
+    margin: 30px auto;
+}
+
+.make-book__btn-order:hover {
+    background: #c50000;
+
+}
+
+.make-book>h2>a {
+    margin: 10px 5px;
+    font-size: 30px;
+}
+
+.make-book>h2 {
+    font-size: 40px;
+}
+
+.make-book__container {
+    margin-top: 30px;
+}
+
+.make-book__container>.row>.col {
+    text-align: center;
+}
+
+.make-book__container>.row>.col>h3 {
+    font-size: 24px;
+}
+
+.make-book__container>.row>.col>h6 {
+    font-size: 16px;
+}
+    
+
+
+.clients {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.clients>h2 {
+    padding: 50px 0 30px;
+    font-size: 40px;
+}
+
+.contacts {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    color: #000;
+}
+
+.contacts>h2 {
+    padding: 50px 0 30px;
+    font-size: 40px;
+}
+
+.contacts__red-text {
+    color: #fb020e;
+}
+
+.col>h3 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.contacts__container>.row>.col {
+    text-align: left;
+}
+
+.col>h4 {
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+.col>h5 {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+.contacts__information {
+    padding-top: 30px;
+    margin-top: 20px;
+}
+
+.contacts__information>.row>.col {
+    text-align: left;
+}
+
+.contacts__icon {
+    margin: auto
+}
+
+
+footer {
+    background: #000;
+    width: 1200px;
+    height: 115px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 140px;
+    color: #fff;
+
+}
+
+footer>h6 {
+    font-size: 18px;
+    margin: auto 0;
+}
+
+footer>h5 {
+    font-size: 30px;
+    margin: auto 0;
+}
