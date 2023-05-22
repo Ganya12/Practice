@@ -22,19 +22,34 @@ h6 {
 }
 
 .header {
-    height: 100px;
     background: #000;
     color: #fff;
     text-align: center;
-    padding: 40px 200px 0 0;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+  
+@media all and (max-width: 1200px) {
+    .header {
+      justify-content: space-around;
+    }
+}
+  
+@media all and (max-width: 600px) {
+    .header {
+      flex-direction: column;
+    }
 }
 
 .header__menu {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     width: 700px;
     position: relative;
-    left: 50%;
+    left: 50%; */
+    padding-top: 50px;
 }
 
 .header__text {
@@ -42,6 +57,7 @@ h6 {
     text-decoration: none;
     position: relative;
     font-size: 24px;
+    padding: 50px 40px 3px;
 }
 
 .header__text:hover {
@@ -67,11 +83,52 @@ h6 {
     transform: scaleX(1);
 }
 
+nav{
+    background: #000;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+nav > ul {
+   padding: 0;
+}
+nav li{
+    display: inline-block;
+    vertical-align: top;
+    padding: 40px 50px 0;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+nav label {    
+    display: none;
+    padding: 10px 10%;
+}
+
+@media screen and (max-width: 800px) {
+    
+    nav label{
+        display: inline-block;
+    }
+    nav > ul {
+        display: none;
+    }
+    input[type="checkbox"]:checked ~ label + ul {
+        display: block;
+    }
+    
+}
+
 
 .offer {
     height: 780px;
     position: relative;
-    margin: -20px auto 0;
+    margin: 0 auto;
     background: #000;
     color: #fff;
     
@@ -99,17 +156,23 @@ h6 {
 
 
 .catalog {
-    height: 250px;
     background: #d9dad9;
     text-align: center;
     color: #000;
+    padding: 0 10%;
 }
 
 .catalog__blocks {
     display: flex;
-    justify-content: space-between;
-    width: 1200px;
+    justify-content: space-evenly;
     margin: 0 auto;
+    flex-flow: row wrap;
+}
+
+@media all and (max-width: 600px) {
+    .catalog__blocks {
+      flex-direction: column;
+    }
 }
 
 .catalog__book, .catalog__printer, .catalog__pc {
@@ -171,6 +234,10 @@ h6 {
     justify-content: space-between;
 }
   
+.publish-print__slider>* {
+    flex: 1 100%;
+}
+
 .sliderimg1 {
     display: none;
     width: 100%;
@@ -200,6 +267,13 @@ h6 {
 .arr1.next1 {
     right: 0;
 }
+
+/* @media all and (min-width: 1400px) {
+    .sliderimg1  { flex: 3 0px; }    
+    .arr1.prev1 { order: 2; } 
+    .sliderimg1  { order: 1; }    
+    .arr1.next { order: 3; }
+} */
 
 
 .online-edition {
@@ -625,8 +699,8 @@ h6 {
 }
 
 .contacts__information {
-    padding-top: 30px;
-    margin-top: 20px;
+    padding-top: 10px;
+    margin-top: 15px;
 }
 
 .contacts__information>.row>.col {
@@ -642,7 +716,7 @@ footer {
     background: #000;
     width: 1200px;
     height: 115px;
-    margin: 0 auto;
+    margin: 3% auto;
     display: flex;
     justify-content: space-between;
     padding: 0 140px;
