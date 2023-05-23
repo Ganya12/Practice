@@ -11,6 +11,7 @@
     text-align: center;
     font-size: 18px;
     padding: 20px 80px;
+    color: #4d4c4c;
 }
 
 .heading {
@@ -25,6 +26,11 @@
 .bold {
     font-weight: 700;
     margin: 0;
+}
+
+.bold-right {
+    font-weight: 700;
+    margin: 0 0 0 20px;
 }
 
 .personal-data {
@@ -43,7 +49,7 @@
 }
 
 input {
-    padding-left: 15px;
+    padding: 0 15px;
     margin-bottom: 10px;
     justify-content: space-between;
     display: flex;
@@ -65,8 +71,9 @@ input {
 }
 
 .message {
-    padding: 40px 7.5px ;
-    /* position: absolute; */
+    padding: 0 15px;
+    height: 110px;
+    width: 237px;
 }
 
 .send {
@@ -83,6 +90,7 @@ input {
 }
 
 .inp-right {
-
     float: right;
 }
+
+
