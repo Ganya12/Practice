@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background: url(./images/fon2.png);
+    background-repeat: no-repeat;
+    height: 750px;
+    width: 700px;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 80px;
+}
+
+.heading {
+    font-size: 36px;
+}
+
+.heading2 {
+    font-size: 30px;
+}
+
+
+.bold {
+    font-weight: 700;
+    margin: 0;
+}
+
+.personal-data {
+    font-size: 16px;
+    display: flex;
+}
+
+.checkbox {
+    width: 36px;
+    height: 33px;
+    margin-right: 15px;
+}
+
+.button {
+    font-size: 24px;
+}
+
+input {
+    padding-left: 15px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.left-side {
+    text-align: left;
+}
+
+.button-download {
+    background: #efb858;
+    padding: 10px 60px;
+}
+
+.file-no {
+    width: 50px;
+    font-size: 16px;
+    padding: 0;
+}
+
+.message {
+    padding: 40px 7.5px ;
+    /* position: absolute; */
+}
+
+.send {
+    background: #fa3131;
+    width: 360px;
+    height: 64px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.select-file {
+    padding: 5px 15px;
+    width: 160px;
+}
+
+.inp-right {
+
+    float: right;
+}

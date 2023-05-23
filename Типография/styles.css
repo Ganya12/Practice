@@ -57,7 +57,8 @@ h6 {
     text-decoration: none;
     position: relative;
     font-size: 24px;
-    padding: 50px 40px 3px;
+    padding: 50px 10px 3px;
+    margin: 0 30px;
 }
 
 .header__text:hover {
