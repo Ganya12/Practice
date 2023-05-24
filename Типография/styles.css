@@ -740,4 +740,30 @@ footer>h5 {
   text-align: center;
 }
 
+.how-work {
+    text-align: left;
+    margin: 0 auto;
+}
 
+.how-work>h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.h-w>h5 {
+    font-size: 30px;
+    padding: 30px 0 ;
+}
+
+.h-w>h6 {
+    font-size: 16px;
+}
+
+@media all and (max-width: 995px) {
+    .how-work1 {
+      flex-direction: column;
+      width: 100%;
+      display: flex;
+    }
+}
