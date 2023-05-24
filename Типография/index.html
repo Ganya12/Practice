@@ -24,7 +24,7 @@
 
 
     <nav>      
-        <input type="checkbox" name="menu" id="btn-menu" />
+        <input class="inp-header" type="checkbox" name="menu" id="btn-menu" />
         <label for="btn-menu"><img style="width: 100px; height: 100px;" src="./images/menu.png" alt=""></label> 
         <ul>
             <li><a href="#for-whom" class="header__text">Для кого</a></li>
@@ -57,8 +57,81 @@
                 <img src="./images/pc.png" alt="">
                 <h3>Интернет-издания</h3>
             </div>
-            <button class="catalog__order">Заказать <br> расчет</button>
-            
+            <button class="catalog__order" id="modalButton1">Заказать <br> расчет</button>
+            <div id="myModal1" class="modal">
+                <div class="modal-content1">
+                    <span class="close">&times;</span>
+                    <div class="container cont-modal">
+                        <div class="row">
+                            <div class="col heading bold">
+                                Заказать
+                            </div>
+                        </div>
+                        <div class="row heading2 bold">
+                            <div class="col">
+                                редакционно издательские услуги
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="bold left-side">Верстка и дизайн блока</p>
+                                <input type="text" placeholder="Простая">
+                            </div>
+                            <div class="col">
+                                <p class="bold-right left-side">Ваше имя</p>
+                                <input class="inp-right" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="bold left-side">Корректура</p>
+                                <input type="text" placeholder="1 правка">
+                            </div>
+                            <div class="col">
+                                <p class="bold-right left-side">Ваш e-mail</p>
+                                <input class="inp-right" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="bold left-side">Редактура</p>
+                                <input type="text" placeholder="Литературная">
+                                <p class="bold left-side">Дизайн обложки</p>
+                                <input type="text" placeholder="Типовой дизайн">
+                            </div>
+                            <div class="col">
+                                <p class="bold-right left-side">Сообщение</p>
+                                <textarea class="message inp-right"> </textarea>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="bold left-side">Прикрепить файлы</p>
+                                <input class="select-file" type="text" placeholder="Выберите файл">
+                            </div>
+                            <div class="col file-no">
+                                Файл не выбран
+                            </div>
+                            <div class="col">
+                                <button class="button-download">Закачать</button>
+                            </div>
+                            <!-- <input class="file" type="file" name="" id=""> -->
+                        </div>
+                        <div class="row">
+                            <div class="col personal-data">
+                                <input class="checkbox" type="checkbox"> 
+                                Даю согласие на обработку своих персональных данных
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col button bold">
+                                <button class="send">Отправить</button> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -143,52 +216,33 @@
         </div>
     </div>
 
-    <div class="how-we-work" id="how-we-work">
+    <div class="container how-we-work" id="how-we-work">
         <h2>Как мы работаем</h2>
-        <img src="./images/how-work.png" alt="">
-        <div class="how-we-work__blocks">
-            <div class="how-we-work__calculation-cost">
+        <div class="row how-we-work__blocks">
+            <div class="col how-we-work__calculation-cost">
+                <img class="image-long" src="./images/how-work.png" alt="Image 1" class="img-fluid">
+            </div>
+        </div>
+        <div class="row how-we-work__blocks">
+            <div class="col how-we-work__calculation-cost">
                 <h5>РАСЧЕТ <br> СТОИМОСТИ</h5>
                 <h6>На основе технического задания <br>производим расчет стоимости,<br> обсуждаем все необходимые<br> параметры книги или <br>интернет-издания</h6>
             </div>
-            <div class="how-we-work__conclusion-agreements">
+            <div class="col how-we-work__conclusion-agreements">
                 <h5>ЗАКЛЮЧЕНИЕ <br> ДОГОВОРА</h5>
                 <h6>После согласования <br>всех моментов, касающихся <br>исполнения вашего заказа,<br> заключаем официальный<br> договор.</h6>
             </div>
-            <div class="how-we-work__original-layout">
+            <div class= "col how-we-work__original-layout">
                 <h5>ОРИГИНАЛ-<br>МАКЕТ</h5>
                 <h6>После согласования делаем<br> верстку, дизайн обложки<br> и присылаем на согласование. <br>Для интернет-изданий сначала<br> делаем прототип, потом<br> утверждаем дизайн.</h6>
             </div>
-            <div class="how-we-work__seal-circulation">
+            <div class="col how-we-work__seal-circulation">
                 <h5>ПЕЧАТЬ <br> ТИРАЖА</h5>
                 <h6>Подготовленный макет печатаем <br>и превращаем<br> в книгу.<br> Интернет-издание верстаем <br>и размещаем<br> в интернете.</h6>
             </div>
         </div>
-    </div>
 
     
-    <div class="container how-work">
-        <h2>Как мы работаем</h2>
-        <img src="./images/how-work.png" alt="Image 1" class="img-fluid">
-        <div class="row how-work1">
-            <div class="col-sm-1 col-lg-3 h-w">
-                <h5>РАСЧЕТ <br> СТОИМОСТИ</h5>
-                <h6>На основе технического задания производим расчет стоимости, обсуждаем все необходимые параметры книги или интернет-издания</h6>
-            </div>
-            <div class="col-sm-1 col-lg-3 h-w">
-                <h5>ЗАКЛЮЧЕНИЕ <br> ДОГОВОРА</h5>
-                <h6>После согласования <br>всех моментов, касающихся исполнения вашего заказа, заключаем официальный договор.</h6>
-            </div>
-            <div class="col-sm-1 col-lg-3 h-w">
-                <h5>ОРИГИНАЛ-<br>МАКЕТ</h5>
-                <h6>После согласования Делаем верстку, дизайн обложки и присылаем на согласование. Для интернет-изданий сначала делаем прототип, потом<br> утверждаем дизайн.</h6>
-            </div>
-            <div class="col-sm-1 col-lg-3 h-w">
-                <h5>ПЕЧАТЬ <br> ТИРАЖА</h5>
-                <h6>Подготовленный макет печатаем и превращаем в книгу. Интернет-издание верстаем и размещаем в интернете.</h6>
-            </div>
-        </div>
-    </div>
 
     <div class="equipment">
         <div class="equipment__blocks">
@@ -247,7 +301,40 @@
                 <h3>Стоимость тиража</h3>
                 <h5 class="print-calculator__for-indent">8 332 руб</h5>
                 <h5>277 руб <br> за 1 штуку</h5>
-                <button class="print-calculator__order">Заказать</button>
+                <button id="modalButton2" class="print-calculator__order">Заказать</button>
+                <div  id="myModal2" class="modal">
+                    <div class="modal-content2">
+                        <span class="close">&times;</span>
+                        <div class="container modal2">
+                            <div class="heading1"><h1>Заказать печать книги</h1> </div>
+                            <div class="row input1">
+                                <div class="col">
+                                    <p >Ваше имя</p>
+                                    <input class="inp" type="text" placeholder="Иван Иванов">
+                                    <p >Ваш e-mail</p>
+                                    <input class="inp" type="text" placeholder="ivanov@bk.ru">
+                                </div>
+                                <div class="col">
+                                    <p >Сообщение</p>
+                                    <input class="inp1" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row attach">
+                                <div class="col">
+                                    <p >Прикрепить файлы</p>
+                                    <input class="button1 file" type="file"></button>
+                                </div>
+                            </div>
+                            <div class="row approval">
+                                    <input class="inp2" type="checkbox" placeholder="">
+                                    <p>Даю согласие на обработку своих персональных данных</p>
+                            </div>
+                            <div class="row sending">
+                                <button class="button2">Отправить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -311,23 +398,23 @@
                             <div class="col-md-auto">
                                 <img class="contacts__icon" src="./images/icon-phone.png" alt="">
                             </div>
-                            <div class="col">
-                                <h5>8 (8172) 59-78-50</h5>
+                            <div class="col contact">
+                                <a href="tel:88172597850">8 (8172) 59-78-50</a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-auto">
                                 <img class="contacts__icon" src="./images/icon-mail.png" alt="">
                             </div>
-                            <div class="col">
-                                <h5>typograf35@mail.ru</h5>
+                            <div class="col contact">
+                                <a href="mailto:typograf35@mail.ru">typograf35@mail.ru</a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-auto">
                                 <img class="contacts__icon" src="./images/icon-vk.png" alt="">
                             </div>
-                            <div class="col">
+                            <div class="col contact">
                                 <a href="https://vk.com/typographia_isert_ran">vk.com/typographia_isert_ran</a>
                             </div>
                         </div>
@@ -344,10 +431,11 @@
 
     <footer>
         <h6>© 2021 Вологодский научный центр <br>Российской академии наук</h6>
-        <h5>8 (8172) 59-78-50</h5>
+        <a href="tel:88172597850">8 (8172) 59-78-50</a>
     </footer>
     
 
+    
 
     <script>
         // слайдер1
@@ -422,32 +510,64 @@
         showSlide3(slideIndex);
 
         function nextSlide3() {
-        slideIndex++;
-        showSlide3(slideIndex);
+            slideIndex++;
+            showSlide3(slideIndex);
         }
 
         function prevSlide3() {
-        slideIndex--;
-        showSlide3(slideIndex);
+            slideIndex--;
+            showSlide3(slideIndex);
         }
 
         function showSlide3(n) {
-        var slides = document.getElementsByClassName("sliderimg3");
-        var buttons = document.getElementsByClassName("arr3");
-        if (n >= slides.length) {
-            slideIndex = 0;
+            var slides = document.getElementsByClassName("sliderimg3");
+            var buttons = document.getElementsByClassName("arr3");
+            if (n >= slides.length) {
+                slideIndex = 0;
+            }
+            if (n < 0) {
+                slideIndex = slides.length-1;
+            }
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].className = buttons[i].className.replace("active3", "");
+            }
+            slides[slideIndex].style.display = "block";
+            buttons[slideIndex].className += "active";
         }
-        if (n < 0) {
-            slideIndex = slides.length-1;
+
+        var modalButton1 = document.getElementById("modalButton1");
+        var modalButton2 = document.getElementById("modalButton2");
+        var modal1 = document.getElementById("myModal1");
+        var modal2 = document.getElementById("myModal2");
+        var closeBtns = document.getElementsByClassName("close");
+
+        // Открываем модальное окно 1 при клике на кнопку 1
+        modalButton1.onclick = function() {
+        modal1.style.display = "block";
         }
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+
+        // Открываем модальное окно 2 при клике на кнопку 2
+        modalButton2.onclick = function() {
+        modal2.style.display = "block";
         }
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].className = buttons[i].className.replace("active3", "");
+
+        // Закрываем модальные окна при клике на кнопку закрытия
+        for (var i = 0; i < closeBtns.length; i++) {
+        closeBtns[i].onclick = function() {
+            modal1.style.display = "none";
+            modal2.style.display = "none";
         }
-        slides[slideIndex].style.display = "block";
-        buttons[slideIndex].className += "active";
+        }
+
+        // Закрываем модальные окна при клике вне их областей
+        window.onclick = function(event) {
+        if (event.target == modal1 || event.target == modal2) {
+            modal1.style.display = "none";
+            modal2.style.display = "none";
+        }
         }
     </script>
 </body>
