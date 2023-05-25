@@ -136,7 +136,7 @@
     </div>
 
 
-    <div class="our-history">
+    <div class="container our-history">
         <h2>Наша история</h2>
         <h6>Типография Вологодский научный центр РАН начала свою работу в 2000 году, чтобы  обеспечить печатной продукцией научное сообщество северо-запада России. В 2013 г. по решению Российской Академии Наук типография открыла свои двери для сторонних заказов и получила название  Издательский Центр ВолНЦ РАН.</h6>
         <h6 class="our-history__bold">Наша продукция  - книги в мягкой обложке (клеевой переплёт), малотиражные журналы, брошюры, буклеты. Делаем интернет-журналы  и сайты учебных заведений.</h6>
@@ -207,12 +207,25 @@
         </div>
     </div>
 
-    <div class="advantages">
+    <div class="container advantages">
         <h2>Преимущества</h2>
-        <div class="advantages__blocks">
-            <img class="advantages__img" src="./images/adv-img.png" alt="">
-            <h3 class="advantages__text">Большой опыт <br>Редакторская правка<br>Услуги корректора<br>Рецензирование<br>Присвоение ISBN <br>Рассылка в библиотеки<br>Доставка</h3>
-            <img class="advantages__medal" src="./images/adv-medal.png" alt="">
+        <div class="row advantages__blocks">
+            <div class="col advantages__img">
+                <img src="./images/adv-img.png" alt="">
+            </div>            
+            <div class="col advantages__medal">
+                <img src="./images/adv-medal.png" alt="">
+            </div>
+            <div class="col advantages__text">
+                    <h3>Большой опыт</h3>
+                    <h3>Редакторская правка</h3>
+                    <h3>Услуги корректора</h3>
+                    <h3>Рецензирование</h3>
+                    <h3>Присвоение ISBN</h3>
+                    <h3>Рассылка в библиотеки</h3>
+                    <h3>Доставка</h3>
+            </div>
+
         </div>
     </div>
 
@@ -248,7 +261,7 @@
         <div class="container equipment__blocks">
             <div class="row">
                 <div class="col equipment__zag">
-                    <h2>Оборудование</h2>  
+                    Оборудование 
                 </div>
             </div>
             <div class="row">
@@ -279,19 +292,35 @@
         </div> 
     </div>
 
-    <div class="order-print-calculation">
-        <h2>Заказать расчет печати издания</h2>
-        <div class="order-print-calculation__blocks">
-            <h6>*Печать готового оригинал-макета, соответствующего <br>техническим требованиям к печати </h6>
-            <button class="order-print-calculation__download">Скачать требования</button>
+    <div class="container order-print-calculation">
+        <div class="row">
+            <div class="col order-print-calculation__h2">
+                Заказать расчет печати издания
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-sm-8">
+                <h6 class="order-print-calculation__h6">*Печать готового оригинал-макета, соответствующего техническим требованиям к печати </h6>
+            </div>
+            <div class="col-sm-4">
+                <button class="order-print-calculation__download">Скачать требования</button>
+            </div>      
         </div>
     </div>
 
-    <div class="print-calculator">
-        <h2>Калькулятор расчета печати книг</h2>
-        <h5>с мягкой цветной обложкой 250 г/м2 (4+0) и клеевым скреплением</h5>
-        <div class="print-calculator__blocks">
-            <div class="print-calculator__col1">
+    <div class=" container print-calculator">
+        <div class="row">
+            <div class="col print-calculator__h2">
+                Калькулятор расчета печати книг
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>с мягкой цветной обложкой 250 г/м2 (4+0) и клеевым скреплением</h5>
+            </div>
+        </div>
+        <div class="row print-calculator__blocks">
+            <div class=" col print-calculator__col1">
                 <h5>Формат</h5>
                 <input type="text" placeholder="A5">
                 <h5>Бумага</h5>
@@ -299,14 +328,14 @@
                 <h5>Кол-во ч/б страниц</h5>
                 <input type="text" placeholder="5">
             </div>
-            <div class="print-calculator__col2">
+            <div class="col print-calculator__col2">
                 <h5>Кол-во цветных страниц</h5>
                 <input type="text" placeholder="100">
                 <h5>Тираж</h5>
                 <input type="text" placeholder="30">
-                <h6>Пример:<br>Книга с мягкой цветной обложкой<br>Тираж 30 шт<br>Ч/б печать внутренних страниц<br>Стоимость тиража 8 332 руб<br>Стоимость 1 штуки 277 руб</h6>
+                <h6 class="print-calculator__col2-delete">Пример:<br>Книга с мягкой цветной обложкой<br>Тираж 30 шт<br>Ч/б печать внутренних страниц<br>Стоимость тиража 8 332 руб<br>Стоимость 1 штуки 277 руб</h6>
             </div>
-            <div class="print-calculator__col3">
+            <div class="col print-calculator__col3">
                 <h3>Стоимость тиража</h3>
                 <h5 class="print-calculator__for-indent">8 332 руб</h5>
                 <h5>277 руб <br> за 1 штуку</h5>
@@ -348,46 +377,34 @@
         </div>
     </div>
 
-    <div class="make-book">
+    <div class="container make-book">
         <h2>Сделать книгу с нуля<a>(Есть файл в .doc)</a></h2>
         <h6>Мы создадим облик вашей книги: подберём размер полосы набора, шрифт и сетку, добавим изображения и декоративные элементы. Расставим по <br>местам заголовки и основной текст, правильно оформим изображения, таблицы, нумерованные списки и диалоги, сделаем дизайн обложки.<br> При необходимости корректор исправит правописание, расставит знаки препинания, а редактор внесет исправления в стиль изложения.</h6>
-        <img src="./images/4books.png" alt="">
+        <div class="row"><img class="" src="./images/4books.png" alt=""></div>
         <div class="make-book__container">
             <div class="row">
-                <div class="col">
-                    <h3>Простая верстка</h3>
-                </div>
-                <div class="col">
-                    <h3>Верстка средней <br>сложности</h3>
-                </div>
-                <div class="col">
-                    <h3>Сложная верстка</h3>
-                </div>
-                <div class="col">
-                    <h3>Журнальная верстка</h3>
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col">
+                <div class="col col_height">
+                    <h3>Простая верстка</h3>                    
                     <h6>Только тескт и простой макет</h6>
                 </div>
-                <div class="col">
+                <div class="col col_height">
+                    <h3>Верстка средней <br>сложности</h3>                    
                     <h6>Текст и небольшое кол-во таблиц <br>и иллюстраций (20% от площади)</h6>
                 </div>
-                <div class="col">
+                <div class="col col_height">
+                    <h3>Сложная верстка</h3>
                     <h6>Текст и большое кол-во таблиц <br> и иллюстраций</h6>
                 </div>
-                <div class="col">
+                <div class="col col_height">
+                    <h3>Журнальная верстка</h3>
                     <h6>Текст и большое кол-во<br> разных иллюстраций, сложный макет</h6>
                 </div>
             </div>
-        </div>
 
         <button class="make-book__btn-order">Заказать</button>
-    </div>
+        </div>
 
-    <div class="clients">
+    <div class="container clients">
         <h2>Клиенты</h2>
         <h4>На сегодняшний день клиентами Издательского Центра стали такие организации и учреждения, как  Правительство Вологодской области, филиал СПбГЭУ в г. Вологде, Вологодский филиал Академии МУБиНТ, Оптовый Центр АПлайн и другие.</h4>
     </div>
@@ -397,11 +414,11 @@
         <div class="container contacts__container">
             <div class="row">
                 <div class="col">
-                    <h4>Рады видеть Вас по адресу:</h4>
-                    <h5>г. Вологда, ул. Гоголя, 49</h5>
-                    <h4>Режим работы:</h4>
-                    <h3>пн-пт с 08:00 до 17:00 (обед с 12:00 - 13:00)</h3>
-                    <h3 class="contacts__red-text">сб, вс - выходные</h3>
+                    <h4 class="contacts__h4">Рады видеть Вас по адресу:</h4>
+                    <h5 class="contacts__h5">г. Вологда, ул. Гоголя, 49</h5>
+                    <h4 class="contacts__h4">Режим работы:</h4>
+                    <h3 class="contacts__h3">пн-пт с 08:00 до 17:00 (обед с 12:00 - 13:00)</h3>
+                    <h3 class="contacts__red-text contacts__h3">сб, вс - выходные</h3>
                     <div class="contacts__information">
                         <div class="row">
                             <div class="col-md-auto">
@@ -438,9 +455,9 @@
         </div>
     </div>
 
-    <footer>
-        <h6>© 2021 Вологодский научный центр <br>Российской академии наук</h6>
-        <a href="tel:88172597850">8 (8172) 59-78-50</a>
+    <footer class="container footer1">
+        <h6 class="textcenter">© 2021 Вологодский научный центр <br>Российской академии наук</h6>
+        <a class="nombernone" href="tel:88172597850">8 (8172) 59-78-50</a>
     </footer>
     
 
