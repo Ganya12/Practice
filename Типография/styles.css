@@ -335,13 +335,12 @@ nav label {
 .for-whom {
     position: relative;
     margin: 0 auto;
-    width: 1200px;
     text-align: center;
     color: #000;
 }
 
 .for-whom>h2 {
-    padding: 100px 0 40px;
+    padding: 100px 0 0;
     font-size: 40px;
 }
 
@@ -350,10 +349,25 @@ nav label {
     justify-content: space-between;
 }
 
-.for-whom__publishing-house>h5, .for-whom__author>h5, .for-whom__institution>h5, .for-whom__corporate-clients>h5 {
+.for-whompublishing-house>h5, .for-whomauthor>h5, .for-whominstitution>h5, .for-whomcorporate-clients>h5 {
     padding-top: 15px;
-    font-size: 30px;
+    font-size: 30px; 
+
 }
+.for-whom__blocks > .col {
+    margin-top: 10%;
+}
+@media all and (max-width: 500px) {
+    .for-whom__1 {
+      width: 80px;
+    }
+}
+@media all and (max-width: 500px) {
+    .for-whom__blocks {
+      flex-direction: column;
+    }
+}
+
 
 
 .advantages {
@@ -416,16 +430,14 @@ nav label {
 .equipment {
     position: relative;
     margin: 0 auto;
-    width: 1200px;
     text-align: center;
     color: #000;
 }
 
 .equipment__blocks {
     margin-top: 100px;
-    display: flex;
-    justify-content: space-between;
     text-align: left;
+    
 }
 
 .equipment__text>h2 {
@@ -436,6 +448,26 @@ nav label {
     margin-top: 40px;
 }
 
+@media all and (max-width: 1200px) {
+    .equipment__blocks {
+        flex-flow: column wrap;
+    }
+    .equipment__img {
+        width: 400px;
+        margin: 20% auto;
+    }
+
+}
+
+@media all and (max-width: 770px) {
+    .equipment__img {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .equipment__blocks {
+        flex-direction: column;
+    }
+}
 
 .reviews {
     position: relative;
@@ -689,6 +721,10 @@ nav label {
 .col>h5 {
     font-size: 30px;
     padding-bottom: 30px;
+}
+.colh5>h5 {
+    font-size: 30px;
+    padding-bottom: 15px;
 }
 .col>a {
     font-size: 30px;
