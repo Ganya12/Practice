@@ -1064,3 +1064,20 @@ text-align: center;
     text-decoration: none;
     background-color: #7a0006;
 }
+
+
+
+.slide {
+    width: 70% !important;
+    margin: 0 auto;
+}
+
+@media all and (max-width: 900px) {
+    .slide {
+        width: 90% !important;
+    }
+}
+
+.carousel-control-prev, .carousel-control-next  {
+    color: #000;
+}
