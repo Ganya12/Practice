@@ -155,6 +155,13 @@ nav label {
     font-size: 48px;
 }
 
+.button-up {
+    position: fixed;
+    text-align: right;
+    align-items: end;
+    margin: 100px;
+}
+
 
 .catalog {
     background: #d9dad9;
@@ -204,7 +211,7 @@ nav label {
 }
 
 .our-history>h2 {
-    padding: 100px 0 30px;
+    padding: 100px 0 5%;
     font-size: 40px;
 }
 
@@ -213,23 +220,45 @@ nav label {
 }
 
 
-
-.publish-print {
-    position: relative;
-    margin: 0 auto;
-    width: 1200px;
-    text-align: center;
+.publish-print>h2 {
+    padding: 100px 0 5%;
+    font-size: 40px;
     color: #000;
 }
 
-.publish-print>h2 {
-    padding: 100px 0 40px;
-    font-size: 40px;
+.slide {
+    width: 70% !important;
+    margin: 0 auto;
 }
 
+@media all and (max-width: 900px) {
+    .slide {
+        width: 90% !important;
+    }
+}
+
+.carousel-control-prev, .carousel-control-next  {
+    color: #000;
+}
+
+.carousel-control-prev-icon {
+    background-image: url(./images/arl.png) !important;
+    width: 4rem!important;
+    height: 4rem!important;
+}
+.carousel-control-next-icon {
+    background-image: url(./images/arr.png)!important;
+    width: 4rem!important;
+    height: 4rem!important;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 8% !important;
+    opacity: 1 !important;
+}
 
 /* слайдер1 */
-.publish-print__slider {
+/* .publish-print__slider {
     position: relative;
     width: 100%;
     height: auto;
@@ -269,7 +298,7 @@ nav label {
   
 .arr1.next1 {
     right: 0;
-}
+} */
 
 /* @media all and (min-width: 1400px) {
     .sliderimg1  { flex: 3 0px; }    
@@ -288,7 +317,7 @@ nav label {
 }
 
 .online-edition>h2 {
-    padding: 100px 0 30px;
+    padding: 100px 0 5%;
     font-size: 40px;
 }
 
@@ -355,7 +384,7 @@ nav label {
 
 }
 .for-whom__blocks > .col {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 @media all and (max-width: 500px) {
     .for-whom__1 {
@@ -382,7 +411,7 @@ nav label {
 }
 
 .advantages>h2 {
-    padding: 80px 0 40px;
+    padding: 80px 0 5%;
     font-size: 40px;
 }
 
@@ -425,7 +454,7 @@ nav label {
 }
 
 .how-we-work>h2 {
-    padding: 100px 0 40px;
+    padding: 100px 0 5%;
     font-size: 40px;
 }
 
@@ -500,7 +529,7 @@ nav label {
 }
 
 .reviews>h2 {
-    padding: 100px 0 40px;
+    padding: 100px 0 5%;
     font-size: 40px;
 }
 
@@ -553,7 +582,7 @@ nav label {
 }
 
 .order-print-calculation__h2 {
-    padding: 100px 0 40px;
+    padding: 100px 0 5%;
     font-size: 40px;
 }
 
@@ -758,13 +787,13 @@ nav label {
 
 .col>a {
     font-size: 30px;
-    margin: 30px;
     color: #000;
     text-decoration: none;
+    text-align: left;
 }
 .col>a:hover {
     text-decoration: none;
-    color: #000;
+    color: #ff0000;
 }
 
 .contacts__information {
@@ -778,6 +807,39 @@ nav label {
 
 .contacts__icon {
     margin: auto
+}
+
+.messenger {
+    display: flex;
+    justify-content: left;
+    margin-top: 4%;
+    align-items: center;
+    flex-direction: row;
+}
+@media all and (max-width: 800px) {
+    .col>a {
+        font-size: 17px;
+        margin-bottom: 5%;
+        justify-content: left;
+        text-align: left;
+    }
+    .nombernone {
+        display: none;
+    }
+    
+    .contacts__icon {
+        margin-bottom: 7%;
+        width: 40px;
+        height: 40px;
+    }
+    .icon-mail {
+        margin-bottom: 7%;
+        width: 40px;
+        height: 30px;
+    }
+    .map {
+        width: 500px;
+    }
 }
 
 
@@ -814,6 +876,7 @@ footer>a {
       align-items: center;
       padding:0px;
     }
+    
 }
 
 footer>a:hover {
@@ -1067,17 +1130,19 @@ text-align: center;
 
 
 
-.slide {
-    width: 70% !important;
-    margin: 0 auto;
+.button--up {
+    position: fixed;
+    top: 90%;
 }
-
-@media all and (max-width: 900px) {
-    .slide {
-        width: 90% !important;
-    }
-}
-
-.carousel-control-prev, .carousel-control-next  {
-    color: #000;
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999;
 }
