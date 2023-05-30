@@ -151,15 +151,22 @@ nav label {
     padding: 100px 0 0 150px;
 }
 
+.offer__img-books {
+
+    position: absolute; 
+    animation: orbit 5s linear infinite; 
+  }
+  
+  @keyframes orbit {
+    from { 
+      transform: rotate(0deg) translate(35px) rotate(0deg);
+    }
+    to { 
+      transform: rotate(360deg) translate(35px) rotate(-360deg);
+    }
+  }
 .offer__block>h1>a {
     font-size: 48px;
-}
-
-.button-up {
-    position: fixed;
-    text-align: right;
-    align-items: end;
-    margin: 100px;
 }
 
 
@@ -186,6 +193,27 @@ nav label {
 .catalog__book, .catalog__printer, .catalog__pc {
     padding: 50px 30px;
     margin: auto 20px;
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 500 !important;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background: #fff !important;
+    border: 4px solid #ff89e0 !important;
+    padding: 20px 80px !important;
+    font-size: 24px !important;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .catalog__order {
@@ -917,11 +945,11 @@ footer>a:hover {
 .cont-modal {
     background: url(./images/fon2.png);
     background-repeat: no-repeat;
-    height: 750px;
-    width: 700px;
+    height: 700px;
+    width: 700px !important;
     text-align: center;
     font-size: 18px;
-    padding: 20px 80px;
+    padding: 10px 40px;
     color: #4d4c4c;
 }
 
@@ -961,6 +989,7 @@ footer>a:hover {
 
 input {
     padding: 0 15px;
+    width: 250px;
     margin-bottom: 10px;
     justify-content: space-between;
     display: flex;
@@ -984,15 +1013,25 @@ input {
 .message {
     padding: 0 15px;
     height: 110px;
-    width: 237px;
+    width: 250px;
 }
 
 .send {
-    background: #fa3131;
+    background: #fa3131 !important;
     width: 360px;
     height: 64px;
-    color: #fff;
-    font-weight: 500;
+    color: #fff !important;
+    font-weight: 500 !important;
+    margin: 0 auto !important;
+    font-size: 24px !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: 700px !important;
+    }
 }
 
 .select-file {
@@ -1014,36 +1053,37 @@ input {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4); /* Цвет фона с полупрозрачностью */
-  }
+}
   
-  .modal-content1 {
+
+.modal-content1 {
     margin: 3% auto;
     width: 750px;
-  }
-  .modal-content2 {
+}
+.modal-content2 {
     margin: 3% auto;
     width: 800px;
-  }
+}
   
-  .close {
+.close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-  }
+}
   
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 
 
 
-  .modal2 {
+.modal2 {
     background: url(images/fon3.png);
     height: 700px;
     width: 750px;
@@ -1143,23 +1183,44 @@ text-align: center;
     justify-content: center;
     width: 60px;
     height: 50px;
-  }
+}
 
-  .btn-up::before {
+.btn-up::before {
     content: "";
     width: 40px;
     height: 40px;
     background: transparent no-repeat center center;
     background-size: 100% 100%;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
-  }
+}
+@media all and (max-width: 1200px) {
+    .btn-up::before {
+        width: 30px;
+        height: 30px;
+    }
+    .btn-up {
+        width: 40px;
+        height: 33px;
+    }
+}
+@media all and (max-width: 700px) {
+    .btn-up::before {
+        width: 20px;
+        height: 20px;
+    }
+    .btn-up {
+        width: 30px;
+        height: 25px;
+    }
+}
 
-  .btn-up_hide {
+
+.btn-up_hide {
     display: none;
-  }
+}
 
-  @media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
     .btn-up:hover {
       background-color: #7a0006;
     }
-  }
+}

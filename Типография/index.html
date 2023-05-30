@@ -49,22 +49,39 @@
                 <img src="./images/pc.png" alt="">
                 <h3>Интернет-издания</h3>
             </div>
-            <button class="catalog__order" id="modalButton1">Заказать <br> расчет</button>
-            <div id="myModal1" class="modal">
-                <div class="modal-content1">
-                    <span class="close">&times;</span>
-                    <div class="container cont-modal">
-                        <div class="row">
-                            <div class="col heading bold">
-                                Заказать
-                            </div>
+
+
+
+
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
+            // получим кнопку id="btn" с помощью которой будем открывать модальное окно
+            const btn = document.querySelector('#btn');
+            // активируем контент id="modal" как модальное окно
+            const modal = new bootstrap.Modal(document.querySelector('#modal'));
+            // при нажатии на кнопку
+            btn.addEventListener('click', function() {
+                // открываем модальное окно
+                modal.show();
+            });
+
+            });
+            </script>
+
+            <button type="button" class="btn catalog__order" id="btn">Заказать <br> расчет</button>
+
+            <div id="modal" class="modal fade"> 
+                <div class="modal-dialog">
+                <div class="modal-content cont-modal">
+                    <div class="modal-header">
+                        <div class="hhead">
+                            <h4 class="modal-title" id="exampleModalLabel">Заказать редакционно издательские услуги</h4>
                         </div>
-                        <div class="row heading2 bold">
-                            <div class="col">
-                                редакционно издательские услуги
-                            </div>
-                        </div>
-                        <div class="row">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="row">
                             <div class="col">
                                 <p class="bold left-side">Верстка и дизайн блока</p>
                                 <input type="text" placeholder="Простая">
@@ -116,13 +133,77 @@
                                 Даю согласие на обработку своих персональных данных
                             </div>
                         </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn send">Отправить</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- <button class="catalog__order" id="modalButton1">Заказать <br> расчет</button> -->
+            <!-- <div id="myModal1" class="modal"> -->
+                <!-- <div class="modal-content1">
+                    <span class="close">&times;</span>
+                    <div class="container cont-modal">
+                        <div class="row">
+                            <div class="col">
+                                <p class="bold left-side">Верстка и дизайн блока</p>
+                                <input type="text" placeholder="Простая">
+                            </div>
+                            <div class="col">
+                                <p class="bold-right left-side">Ваше имя</p>
+                                <input class="inp-right" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="bold left-side">Корректура</p>
+                                <input type="text" placeholder="1 правка">
+                            </div>
+                            <div class="col">
+                                <p class="bold-right left-side">Ваш e-mail</p>
+                                <input class="inp-right" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="bold left-side">Редактура</p>
+                                <input type="text" placeholder="Литературная">
+                                <p class="bold left-side">Дизайн обложки</p>
+                                <input type="text" placeholder="Типовой дизайн">
+                            </div>
+                            <div class="col">
+                                <p class="bold-right left-side">Сообщение</p>
+                                <textarea class="message inp-right"> </textarea>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="bold left-side">Прикрепить файлы</p>
+                                <input class="select-file" type="text" placeholder="Выберите файл">
+                            </div>
+                            <div class="col file-no">
+                                Файл не выбран
+                            </div>
+                            <div class="col">
+                                <button class="button-download">Закачать</button>
+                            </div>
+                            <input class="file" type="file" name="" id=""> -->
+                        <!-- </div>
+                        <div class="row">
+                            <div class="col personal-data">
+                                <input class="checkbox" type="checkbox"> 
+                                Даю согласие на обработку своих персональных данных
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col button bold">
                                 <button class="send">Отправить</button> 
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --> 
             </div>
         </div>
     </div>
@@ -133,32 +214,6 @@
         <h6>Типография Вологодский научный центр РАН начала свою работу в 2000 году, чтобы  обеспечить печатной продукцией научное сообщество северо-запада России. В 2013 г. по решению Российской Академии Наук типография открыла свои двери для сторонних заказов и получила название  Издательский Центр ВолНЦ РАН.</h6>
         <h6 class="our-history__bold">Наша продукция  - книги в мягкой обложке (клеевой переплёт), малотиражные журналы, брошюры, буклеты. Делаем интернет-журналы  и сайты учебных заведений.</h6>
     </div>
-
-    <!-- <div class="publish-print">
-        <h2>Издание и печать книг</h2>
-        <div class="publish-print__slider">
-            <button class="arr1 prev1" onclick="prevSlide1()"><img src="images/arl.png"></button>
-            <img class="sliderimg1" src="./images/slider1-1.png">
-            <img class="sliderimg1" src="./images/slider1-2.png">
-            <img class="sliderimg1" src="./images/slider1-3.png">
-            <img class="sliderimg1" src="./images/slider1-4.png">
-            <img class="sliderimg1" src="./images/slider1-5.png">
-            <img class="sliderimg1" src="./images/slider1-6.png">
-            <img class="sliderimg1" src="./images/slider1-7.png">
-            <img class="sliderimg1" src="./images/slider1-8.png">
-            <img class="sliderimg1" src="./images/slider1-9.png">
-            <img class="sliderimg1" src="./images/slider1-10.png">
-            <img class="sliderimg1" src="./images/slider1-11.png">
-            <img class="sliderimg1" src="./images/slider1-12.png">
-            <img class="sliderimg1" src="./images/slider1-13.png">
-            <img class="sliderimg1" src="./images/slider1-14.png">
-            <img class="sliderimg1" src="./images/slider1-15.png">
-            <img class="sliderimg1" src="./images/slider1-16.png">
-            <img class="sliderimg1" src="./images/slider1-17.png">
-            <img class="sliderimg1" src="./images/slider1-18.png">
-            <button class="arr1 next1" onclick="nextSlide1()"><img src="images/arr.png"></button>
-        </div>
-    </div> -->
 
     <div class="container publish-print">
         <h2>Издание и печать книг</h2>
@@ -230,7 +285,7 @@
     
 
 
-    <div class="online-edition">
+    <div class="container online-edition">
         <h2>Интернет-издания</h2>
         <h6>Мы делаем интернет-журналы. Главная цель издания журнала – предоставление широким слоям научной общественности и практическим работникам <br> возможности знакомиться с результатами научных исследований и принимать участие в обсуждении этих проблем. <br> Наши журналы: «ЭКОНОМИЧЕСКИЕ И СОЦИАЛЬНЫЕ ПЕРЕМЕНЫ: ФАКТЫ, ТЕНДЕНЦИИ, ПРОГНОЗ» http://esc.vscc.ac.ru/ <br>
             «ПРОБЛЕМЫ РАЗВИТИЯ ТЕРРИТОРИИ» http://pdt.vscc.ac.ru/  и другие</h6>
