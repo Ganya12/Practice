@@ -184,6 +184,14 @@ nav label {
     flex-flow: row wrap;
 }
 
+.catalog__blocks>a {
+    text-decoration: none;
+    color: #000;
+}
+.catalog__blocks>a:hover {
+    color: #000;
+}
+
 @media all and (max-width: 600px) {
     .catalog__blocks {
       flex-direction: column;
@@ -196,9 +204,9 @@ nav label {
 }
 
 
-.btn {
+.btn1 {
     display: inline-block;
-    font-weight: 500 !important;
+    font-weight: 500;
     line-height: 1.5;
     color: #212529;
     text-align: center;
@@ -208,23 +216,17 @@ nav label {
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    background: #fff !important;
-    border: 4px solid #ff89e0 !important;
-    padding: 20px 80px !important;
-    font-size: 24px !important;
+    background: #fff;
+    border: 4px solid #ff89e0;
+    padding: 20px 80px;
+    font-size: 24px;
     border-radius: 0.25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-.catalog__order {
-    margin: auto 0;
-    border: 4px solid #ff89e0;
-    background: #fff;
     font-size: 30px;
-    padding: 20px 80px;
+    margin: auto 0;
 }
 
-.catalog__order:hover {
+.btn1:hover {
     background: #ff89e0;
     border-color: #fff;
 }
@@ -278,6 +280,13 @@ nav label {
     background-image: url(./images/arr.png)!important;
     width: 4rem!important;
     height: 4rem!important;
+}
+
+.carousel-control-next {
+    right: -70px !important;
+}
+.carousel-control-prev {
+    left: -70px !important;
 }
 
 .carousel-control-next, .carousel-control-prev {
@@ -676,18 +685,6 @@ nav label {
     color: #5a5959;
 }
 
-.print-calculator__order {
-    background: #fb020e;
-    color: #fff;
-    font-size: 22px;
-    padding: 10px 70px;
-    margin: 30px auto;
-}
-
-.print-calculator__order:hover {
-    background: #c50000;
-}
-
 .print-calculator__col2>h6 {
     text-align: center;
 }
@@ -704,7 +701,9 @@ nav label {
     font-size: 36px;
     text-align: center;
 }
-
+.print-calculator__col3 {
+    text-align: center;
+}
 .print-calculator__for-indent {
     padding-bottom: 30px;
 }
@@ -712,6 +711,35 @@ nav label {
 .print-calculator__col3>h3 {
     padding-top: 20px;
 }
+
+.btn2 {
+    display: inline-block;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: none;
+    border-radius: 0;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.print-calculator__order {
+    background: #fb020e !important;
+    color: #fff !important;
+    font-size: 22px !important;
+    padding: 10px 70px !important;
+    margin: 30px auto !important;
+}
+
+.print-calculator__order:hover {
+    background: #c50000 !important;
+}
+
+
 
 
 .make-book {
@@ -821,7 +849,7 @@ nav label {
 }
 .col>a:hover {
     text-decoration: none;
-    color: #ff0000;
+    color: #fb020e;
 }
 
 .contacts__information {
@@ -884,12 +912,12 @@ footer {
 
 footer>h6 {
     font-size: 18px;
-    margin: auto 0;
+    margin: auto 50px;
 }
 
 footer>a {
     font-size: 30px;
-    margin: auto 0;
+    margin: auto 50px;
     text-decoration: none;
     color: #fff;
 
@@ -944,12 +972,11 @@ footer>a:hover {
 
 .cont-modal {
     background: url(./images/fon2.png);
-    background-repeat: no-repeat;
+    width: 750px !important;
     height: 700px;
-    width: 700px !important;
     text-align: center;
     font-size: 18px;
-    padding: 10px 40px;
+    padding: 10px 80px;
     color: #4d4c4c;
 }
 
@@ -970,6 +997,11 @@ footer>a:hover {
 .bold-right {
     font-weight: 700;
     margin: 0 0 0 20px;
+}
+
+.bold-right1 {
+    font-weight: 700;
+    margin: 0;
 }
 
 .personal-data {
@@ -1005,7 +1037,7 @@ input {
 }
 
 .file-no {
-    width: 50px;
+    width: 50px !important;
     font-size: 16px;
     padding: 0;
 }
@@ -1026,6 +1058,7 @@ input {
     font-size: 24px !important;
     padding: 0 !important;
     border: none !important;
+    margin-bottom: 100px;
 }
 
 @media (min-width: 576px){
@@ -1073,8 +1106,7 @@ input {
     cursor: pointer;
 }
   
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -1085,19 +1117,27 @@ input {
 
 .modal2 {
     background: url(images/fon3.png);
+    width: 750px !important;
     height: 700px;
-    width: 750px;
     margin: auto;
     font-family: 'Ubuntu', sans-serif;
     color: #4d4c4c;
     font-weight: 900;
+    font-size: 18px;
+    padding: 10px 80px;
 }
+
+
 .input1 {
     display: flex;
     justify-content: space-around;
     margin-left: 8%;
     margin-right: 8%;
     margin-bottom: 5%;
+}
+.hhead {
+    margin: 0 auto !important;
+    padding-left: 50px;
 }
 .attach, .approval{
     display: flex;
@@ -1148,12 +1188,9 @@ input {
     font-size: 24px;
     margin-top: 3%;
     margin-bottom: 3%;
-    width: 50px;
-    height: 44px;
+    width: 36px;
+    height: 33px;
     padding-left: 7%;
-}
-.sending {
-text-align: center;
 }
 .button2 {
     font-size: 24px;
@@ -1166,6 +1203,12 @@ text-align: center;
 .button2:hover {
     text-decoration: none;
     background-color: #7a0006;
+}
+.personal-data__a {
+    align-self: center;
+}
+.modal-footer {
+    padding-bottom: 40px !important;
 }
 
 

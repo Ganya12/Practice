@@ -37,18 +37,18 @@
 
     <div class="catalog">
         <div class="catalog__blocks">
-            <div class="catalog__book">
+            <a class="catalog__book" href="#books-print">
                 <img src="./images/book.png" alt="">
                 <h3>Издание книг</h3>
-            </div>
-            <div class="catalog__printer">
+            </a>
+            <a class="catalog__printer" href="#books-print">
                 <img src="./images/print.png" alt="">
                 <h3>Печать</h3>
-            </div>
-            <div class="catalog__pc">
+            </a>
+            <a class="catalog__pc" href="#online-edition">
                 <img src="./images/pc.png" alt="">
                 <h3>Интернет-издания</h3>
-            </div>
+            </a>
 
 
 
@@ -69,142 +69,77 @@
             });
             </script>
 
-            <button type="button" class="btn catalog__order" id="btn">Заказать <br> расчет</button>
+            <button type="button" class="btn1 catalog__order" id="btn">Заказать <br> расчет</button>
 
             <div id="modal" class="modal fade"> 
                 <div class="modal-dialog">
-                <div class="modal-content cont-modal">
-                    <div class="modal-header">
-                        <div class="hhead">
-                            <h4 class="modal-title" id="exampleModalLabel">Заказать редакционно издательские услуги</h4>
+                    <div class="modal-content cont-modal">
+                        <div class="modal-header">
+                            <div class="hhead">
+                                <h2 class="modal-title" id="exampleModalLabel">Заказать</h2>
+                                <h3>редакционно издательские услуги</h3>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    <div class="row">
-                            <div class="col">
-                                <p class="bold left-side">Верстка и дизайн блока</p>
-                                <input type="text" placeholder="Простая">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="bold left-side">Верстка и дизайн блока</p>
+                                    <input type="text" placeholder="Простая">
+                                </div>
+                                <div class="col">
+                                    <p class="bold-right left-side">Ваше имя</p>
+                                    <input class="inp-right" type="text">
+                                </div>
                             </div>
-                            <div class="col">
-                                <p class="bold-right left-side">Ваше имя</p>
-                                <input class="inp-right" type="text">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="bold left-side">Корректура</p>
+                                    <input type="text" placeholder="1 правка">
+                                </div>
+                                <div class="col">
+                                    <p class="bold-right left-side">Ваш e-mail</p>
+                                    <input class="inp-right" type="text">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p class="bold left-side">Корректура</p>
-                                <input type="text" placeholder="1 правка">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="bold left-side">Редактура</p>
+                                    <input type="text" placeholder="Литературная">
+                                    <p class="bold left-side">Дизайн обложки</p>
+                                    <input type="text" placeholder="Типовой дизайн">
+                                </div>
+                                <div class="col">
+                                    <p class="bold-right left-side">Сообщение</p>
+                                    <textarea class="message inp-right"> </textarea>
+                                </div>
                             </div>
-                            <div class="col">
-                                <p class="bold-right left-side">Ваш e-mail</p>
-                                <input class="inp-right" type="text">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p class="bold left-side">Редактура</p>
-                                <input type="text" placeholder="Литературная">
-                                <p class="bold left-side">Дизайн обложки</p>
-                                <input type="text" placeholder="Типовой дизайн">
-                            </div>
-                            <div class="col">
-                                <p class="bold-right left-side">Сообщение</p>
-                                <textarea class="message inp-right"> </textarea>
-                                
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p class="bold left-side">Прикрепить файлы</p>
-                                <input class="select-file" type="text" placeholder="Выберите файл">
-                            </div>
-                            <div class="col file-no">
-                                Файл не выбран
-                            </div>
-                            <div class="col">
-                                <button class="button-download">Закачать</button>
-                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="bold left-side">Прикрепить файлы</p>
+                                    <input class="select-file" type="text" placeholder="Выберите файл">
+                                </div>
+                                <div class="col file-no">
+                                    Файл не выбран
+                                </div>
+                                <div class="col">
+                                    <button class="button-download">Закачать</button>
+                                </div>
                             <!-- <input class="file" type="file" name="" id=""> -->
-                        </div>
-                        <div class="row">
-                            <div class="col personal-data">
-                                <input class="checkbox" type="checkbox"> 
-                                Даю согласие на обработку своих персональных данных
+                            </div>
+                            <div class="row">
+                                <div class="col personal-data">
+                                    <input class="checkbox inp2" type="checkbox"> 
+                                    <p class="personal-data__a">Даю согласие на обработку своих персональных данных</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn send">Отправить</button>
+                        <div class="modal-footer">
+                            <button type="button" class="btn1 send">Отправить</button>
+                        </div>
                     </div>
                 </div>
-                </div>
-            </div>
-            <!-- <button class="catalog__order" id="modalButton1">Заказать <br> расчет</button> -->
-            <!-- <div id="myModal1" class="modal"> -->
-                <!-- <div class="modal-content1">
-                    <span class="close">&times;</span>
-                    <div class="container cont-modal">
-                        <div class="row">
-                            <div class="col">
-                                <p class="bold left-side">Верстка и дизайн блока</p>
-                                <input type="text" placeholder="Простая">
-                            </div>
-                            <div class="col">
-                                <p class="bold-right left-side">Ваше имя</p>
-                                <input class="inp-right" type="text">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p class="bold left-side">Корректура</p>
-                                <input type="text" placeholder="1 правка">
-                            </div>
-                            <div class="col">
-                                <p class="bold-right left-side">Ваш e-mail</p>
-                                <input class="inp-right" type="text">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p class="bold left-side">Редактура</p>
-                                <input type="text" placeholder="Литературная">
-                                <p class="bold left-side">Дизайн обложки</p>
-                                <input type="text" placeholder="Типовой дизайн">
-                            </div>
-                            <div class="col">
-                                <p class="bold-right left-side">Сообщение</p>
-                                <textarea class="message inp-right"> </textarea>
-                                
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <p class="bold left-side">Прикрепить файлы</p>
-                                <input class="select-file" type="text" placeholder="Выберите файл">
-                            </div>
-                            <div class="col file-no">
-                                Файл не выбран
-                            </div>
-                            <div class="col">
-                                <button class="button-download">Закачать</button>
-                            </div>
-                            <input class="file" type="file" name="" id=""> -->
-                        <!-- </div>
-                        <div class="row">
-                            <div class="col personal-data">
-                                <input class="checkbox" type="checkbox"> 
-                                Даю согласие на обработку своих персональных данных
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col button bold">
-                                <button class="send">Отправить</button> 
-                            </div>
-                        </div>
-                    </div>
-                </div> --> 
-            </div>
+            </div>                        
         </div>
     </div>
 
@@ -215,7 +150,7 @@
         <h6 class="our-history__bold">Наша продукция  - книги в мягкой обложке (клеевой переплёт), малотиражные журналы, брошюры, буклеты. Делаем интернет-журналы  и сайты учебных заведений.</h6>
     </div>
 
-    <div class="container publish-print">
+    <div class="container publish-print" id="books-print">
         <h2>Издание и печать книг</h2>
         <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -285,7 +220,7 @@
     
 
 
-    <div class="container online-edition">
+    <div class="container online-edition" id="online-edition">
         <h2>Интернет-издания</h2>
         <h6>Мы делаем интернет-журналы. Главная цель издания журнала – предоставление широким слоям научной общественности и практическим работникам <br> возможности знакомиться с результатами научных исследований и принимать участие в обсуждении этих проблем. <br> Наши журналы: «ЭКОНОМИЧЕСКИЕ И СОЦИАЛЬНЫЕ ПЕРЕМЕНЫ: ФАКТЫ, ТЕНДЕНЦИИ, ПРОГНОЗ» http://esc.vscc.ac.ru/ <br>
             «ПРОБЛЕМЫ РАЗВИТИЯ ТЕРРИТОРИИ» http://pdt.vscc.ac.ru/  и другие</h6>
@@ -479,7 +414,76 @@
                 <h3>Стоимость тиража</h3>
                 <h5 class="print-calculator__for-indent">8 332 руб</h5>
                 <h5>277 руб <br> за 1 штуку</h5>
-                <button id="modalButton2" class="print-calculator__order">Заказать</button>
+
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+
+                // получим кнопку id="btn" с помощью которой будем открывать модальное окно
+                const btn = document.querySelector('#btn1');
+                // активируем контент id="modal" как модальное окно
+                const modal = new bootstrap.Modal(document.querySelector('#modal1'));
+                // при нажатии на кнопку
+                btn.addEventListener('click', function() {
+                    // открываем модальное окно
+                    modal.show();
+                });
+
+                });
+                </script>
+
+                <button type="button" class="btn2 print-calculator__order" id="btn1">Заказать</button>
+
+                <div id="modal1" class="modal fade"> 
+                    <div class="modal-dialog">
+                        <div class="modal-content modal2">
+                            <div class="modal-header">
+                                <div class="hhead">
+                                    <h2 class="modal-title" id="exampleModalLabel">Заказать печать книги</h2>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row input1">
+                                    <div class="col">
+                                        <p class="bold left-side">Ваше имя</p>
+                                        <input class="inp" type="text" placeholder="Иван Иванов">
+                                        <p class="bold left-side">Ваш e-mail</p>
+                                        <input class="inp" type="text" placeholder="ivanov@bk.ru">
+                                    </div>
+                                    <div class="col">
+                                        <p class="bold-right1 left-side">Сообщение</p>
+                                        <textarea class="inp1"> </textarea>
+                                    </div>
+                                </div>
+                                <div class="row attach">
+                                    <div class="col">
+                                        <p class="bold left-side">Прикрепить файлы</p>
+                                        <input class="button1 file" type="text" placeholder="Выберите файл">
+                                    </div>
+                                    <div class="col file-no">
+                                        Файл не выбран
+                                    </div>
+                                    <div class="col">
+                                        <button class="button-download">Закачать</button>
+                                    </div>
+                                    <!-- <input class="file" type="file" name="" id=""> -->
+                                </div>
+                                <div class="row approval">
+                                    <div class="col personal-data">
+                                        <input class="checkbox inp2" type="checkbox"> 
+                                        <p class="personal-data__a">Даю согласие на обработку своих персональных данных</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn send">Отправить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <button id="modalButton2" class="print-calculator__order">Заказать</button>
                 <div  id="myModal2" class="modal">
                     <div class="modal-content2">
                         <span class="close">&times;</span>
@@ -512,7 +516,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -541,7 +545,72 @@
                 </div>
             </div>
 
-        <button class="make-book__btn-order">Заказать</button>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+
+            // получим кнопку id="btn" с помощью которой будем открывать модальное окно
+            const btn = document.querySelector('#btn2');
+            // активируем контент id="modal" как модальное окно
+            const modal = new bootstrap.Modal(document.querySelector('#modal2'));
+            // при нажатии на кнопку
+            btn.addEventListener('click', function() {
+            // открываем модальное окно
+                modal.show();
+            });
+            });
+            </script>
+
+            <button type="button" class="btn2 make-book__btn-order" id="btn2">Заказать</button>
+
+            <div id="modal2" class="modal fade"> 
+                <div class="modal-dialog">
+                    <div class="modal-content modal2">
+                        <div class="modal-header">
+                            <div class="hhead">
+                                <h2 class="modal-title" id="exampleModalLabel">Заказать печать книги</h2>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row input1">
+                                <div class="col">
+                                    <p class="bold left-side">Ваше имя</p>
+                                    <input class="inp" type="text" placeholder="Иван Иванов">
+                                    <p class="bold left-side">Ваш e-mail</p>
+                                    <input class="inp" type="text" placeholder="ivanov@bk.ru">
+                                </div>
+                                <div class="col">
+                                    <p class="bold-right1 left-side">Сообщение</p>
+                                    <textarea class="inp1"> </textarea>
+                                </div>
+                            </div>
+                            <div class="row attach">
+                                <div class="col">
+                                    <p class="bold left-side">Прикрепить файлы</p>
+                                    <input class="button1 file" type="text" placeholder="Выберите файл">
+                                </div>
+                                <div class="col file-no">
+                                    Файл не выбран
+                                </div>
+                                <div class="col">
+                                    <button class="button-download">Закачать</button>
+                                </div>
+                                <!-- <input class="file" type="file" name="" id=""> -->
+                            </div>
+                            <div class="row approval">
+                                <div class="col personal-data">
+                                    <input class="checkbox inp2" type="checkbox"> 
+                                    <p class="personal-data__a">Даю согласие на обработку своих персональных данных</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn send">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     <div class="container clients">
@@ -558,7 +627,7 @@
                     <h5 class="contacts__h5">г. Вологда, ул. Гоголя, 49</h5>
                     <h4 class="contacts__h4">Режим работы:</h4>
                     <h3 class="contacts__h3">пн-пт с 08:00 до 17:00 (обед с 12:00 - 13:00)</h3>
-                    <h3 class="contactsred-text contactsh3">сб, вс - выходные</h3>
+                    <h3 class="contacts__red-text">сб, вс - выходные</h3>
                     <div class="contacts__information">
                         <div class="row messenger">
                             <div class="col-2"><img class="contacts__icon icon-phone" src="./images/icon-phone.png" alt=""></div>
