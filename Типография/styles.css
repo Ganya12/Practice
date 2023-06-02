@@ -467,20 +467,57 @@ nav label {
     right: 15%;
     margin: 50px -70px 0;
 }
-@media all and (max-width: 1200px) {
-    .advantages__img {
-      width: 100%;
-    }
-}
-@media all and (max-width: 1200px) {
-    .advantages__medal {
-      width: 100px;
-      position: absolute;
-    right: 50%;
-    margin: 50px -70px 0;
-    }
-}
 
+@media all and (max-width: 1400px) {
+    .advantages__blocks {
+        flex-direction: column;
+        padding: 40px 60px 40px 60px;
+    }
+    .advantages__img {
+        width: 100%;
+        text-align: center;
+    }
+    .advantages__medal {
+        position: absolute;
+        left: 0%;
+        padding-top: 70px;
+    }
+    .advantages__text {
+        padding-top: 70px;
+        margin: 0 auto;
+        width: 350px !important;
+    }
+}
+@media all and (max-width: 770px) {
+    .advantages__blocks {
+        flex-direction: column;
+        padding: 40px 60px 40px;
+    }
+    .advantages__image {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    .advantages__medal {
+        position: absolute;
+        left: 0%;
+        padding-top: 10%;
+    }
+    .advantages__text {
+        padding-top: 70px;
+        margin: 0 auto;
+        width: 350px !important;
+    }
+    .medal {
+        width: 150px;
+        height: 150px;   
+    }
+}
+@media all and (max-width: 410px) {
+    .advantages__text>h3 {
+        font-size: 20px !important;
+    }
+}
 
 .how-we-work {
     position: relative;
