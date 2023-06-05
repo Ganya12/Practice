@@ -670,11 +670,14 @@ nav label {
     background: #fb020e;
     color: #fff;
     font-size: 22px;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    text-decoration: none;
 }
 
 .order-print-calculation__download:hover {
     background: #c50000;
+    text-decoration: none;
+    color: #fff;
 }
 
 

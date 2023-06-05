@@ -129,13 +129,14 @@
                             </div>
                             <div class="row">
                                 <div class="col personal-data">
-                                    <input class="checkbox inp2" type="checkbox"> 
+                                    <input class="checkbox inp2" id="myCheckbox1" type="checkbox"> 
                                     <p class="personal-data__a">Даю согласие на обработку своих персональных данных</p>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn1 send">Отправить</button>
+                            <!-- <button class="btn1 send" id="myButton" disabled>Отправить</button> -->
+                            <a  class="btn1 send" id="myButton1" href="https://protraffic.com/wp-content/uploads/2020/11/obshhenie-bez-granic-vozmozhnosti-i-preimushhestva-telegram.jpg">Отправить </a>
                         </div>
                     </div>
                 </div>
@@ -143,6 +144,18 @@
         </div>
     </div>
 
+    <script>
+        const checkbox = document.getElementById("myCheckbox1");
+        const button = document.getElementById("myButton1");
+
+        checkbox.addEventListener("change", function() {
+            if(this.checked) {
+                button.removeAttribute("disabled");
+            } else {
+                button.setAttribute("disabled", true);
+            }
+        });
+    </script>
 
     <div class="container our-history">
         <h2>Наша история</h2>
@@ -378,7 +391,7 @@
                 <h6 class="order-print-calculation__h6">*Печать готового оригинал-макета, соответствующего техническим требованиям к печати </h6>
             </div>
             <div class="col-sm-4">
-                <button class="order-print-calculation__download">Скачать требования</button>
+                <a class="order-print-calculation__download" href="./доки.docx" download>Скачать требования</a>
             </div>      
         </div>
     </div>
@@ -401,21 +414,73 @@
                 <h5>Бумага</h5>
                 <input type="text" placeholder="офсетная 80 г/м2">
                 <h5>Кол-во ч/б страниц</h5>
-                <input type="text" placeholder="5">
+                <input id="input1" type="number" placeholder="5">
             </div>
             <div class="col print-calculator__col2">
                 <h5>Кол-во цветных страниц</h5>
-                <input type="text" placeholder="100">
+                <input id="input2" type="number" placeholder="100">
                 <h5>Тираж</h5>
-                <input type="text" placeholder="30">
+                <input id="input2" type="number" placeholder="30">
                 <h6 class="print-calculator__col2-delete">Пример:<br>Книга с мягкой цветной обложкой<br>Тираж 30 шт<br>Ч/б печать внутренних страниц<br>Стоимость тиража 8 332 руб<br>Стоимость 1 штуки 277 руб</h6>
             </div>
             <div class="col print-calculator__col3">
                 <h3>Стоимость тиража</h3>
-                <h5 class="print-calculator__for-indent">8 332 руб</h5>
+                <h5 class="print-calculator__for-indent" >8 332 руб</h5>
+                <p id="result"></p>
                 <h5>277 руб <br> за 1 штуку</h5>
 
                 <script>
+                    // Получаем ссылки на элементы input и результат
+                    const input1 = document.getElementById('input1');
+                    const input2 = document.getElementById('input2');
+                    const input3 = document.getElementById('input3');
+                    const result = document.getElementById('result');
+
+                    // Добавляем обработчики событий на изменение значений input
+                    input1.addEventListener('input', calculate);
+                    input2.addEventListener('input', calculate);
+                    input3.addEventListener('input', calculate);
+
+                    // Функция расчета
+                    function calculate() {
+                    // Получаем значения из input
+                    const value1 = parseFloat(input1.value);
+                    const value2 = parseFloat(input2.value);
+                    const value3 = parseFloat(input3.value);
+
+                    // Проверяем, являются ли значения числами
+                    if (isNaN(value1) || isNaN(value2) || isNaN(value3)) {
+                        result.textContent = 'Введите числа во все поля';
+                        return;
+                    }
+
+                    // Производим расчет
+                    const sum = value1 + value2 + value3;
+                    const average = sum / 3;
+
+                    // Выводим результат
+                    result.textContent = `Сумма: ${sum}, Среднее: ${average.toFixed(2)}`;
+                    }
+                </script>
+                <script>
+                    function downloadFile(url){
+                        var link = document.createElement('a');
+                        link.href = url;
+                        link.target="_blank";
+                        link.download='';
+                        
+                        var event = document.createEvent("MouseEvents");
+                        event.initMouseEvent("click");
+                        link.dispatchEvent(event);
+                    }
+
+                    var but = document.getElementById('dbut')
+                        but.addEventListener('click', function(){
+                        downloadFile(but.getAttribute('data-path'));
+                    })
+
+
+
                 document.addEventListener('DOMContentLoaded', function() {
 
                 // получим кнопку id="btn" с помощью которой будем открывать модальное окно
