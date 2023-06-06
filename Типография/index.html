@@ -85,7 +85,7 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="bold left-side">Верстка и дизайн блока</p>
-                                    <input type="text" placeholder="Простая">
+                                    <input class="inp-left" type="text" placeholder="Простая">
                                 </div>
                                 <div class="col">
                                     <p class="bold-right left-side">Ваше имя</p>
@@ -95,7 +95,7 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="bold left-side">Корректура</p>
-                                    <input type="text" placeholder="1 правка">
+                                    <input class="inp-left" type="text" placeholder="1 правка">
                                 </div>
                                 <div class="col">
                                     <p class="bold-right left-side">Ваш e-mail</p>
@@ -105,9 +105,9 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="bold left-side">Редактура</p>
-                                    <input type="text" placeholder="Литературная">
+                                    <input class="inp-left" type="text" placeholder="Литературная">
                                     <p class="bold left-side">Дизайн обложки</p>
-                                    <input type="text" placeholder="Типовой дизайн">
+                                    <input class="inp-left" type="text" placeholder="Типовой дизайн">
                                 </div>
                                 <div class="col">
                                     <p class="bold-right left-side">Сообщение</p>
@@ -116,7 +116,6 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <p class="bold left-side">Прикрепить файлы</p>
                                     <input class="select-file" type="text" placeholder="Выберите файл">
                                 </div>
                                 <div class="col file-no">
@@ -129,14 +128,14 @@
                             </div>
                             <div class="row">
                                 <div class="col personal-data">
-                                    <input class="checkbox inp2" id="myCheckbox1" type="checkbox"> 
+                                    <input class="checkbox" id="myCheckbox1" type="checkbox"> 
                                     <p class="personal-data__a">Даю согласие на обработку своих персональных данных</p>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <!-- <button class="btn1 send" id="myButton" disabled>Отправить</button> -->
-                            <a  class="btn1 send" id="myButton1" href="https://protraffic.com/wp-content/uploads/2020/11/obshhenie-bez-granic-vozmozhnosti-i-preimushhestva-telegram.jpg">Отправить </a>
+                            <a  class="send" id="myButton1" href="https://protraffic.com/wp-content/uploads/2020/11/obshhenie-bez-granic-vozmozhnosti-i-preimushhestva-telegram.jpg">Отправить </a>
                         </div>
                     </div>
                 </div>
@@ -407,61 +406,50 @@
                 <h5>с мягкой цветной обложкой 250 г/м2 (4+0) и клеевым скреплением</h5>
             </div>
         </div>
-        <div class="row print-calculator__blocks">
+        <div class="row print-calculator__blocks" id="calculation-form">
             <div class=" col print-calculator__col1">
                 <h5>Формат</h5>
-                <input type="text" placeholder="A5">
+                <input type="number" id="first-value" name="first-value" placeholder="A5" required>
                 <h5>Бумага</h5>
-                <input type="text" placeholder="офсетная 80 г/м2">
+                <input type="number" placeholder="офсетная 80 г/м2" id="second-value" name="second-value" required>
                 <h5>Кол-во ч/б страниц</h5>
-                <input id="input1" type="number" placeholder="5">
+                <input type="number" placeholder="5" id="third-value" name="third-value" required>
             </div>
             <div class="col print-calculator__col2">
                 <h5>Кол-во цветных страниц</h5>
-                <input id="input2" type="number" placeholder="100">
+                <input type="number" placeholder="100" id="fourth-value" name="fourth-value" required>
                 <h5>Тираж</h5>
-                <input id="input2" type="number" placeholder="30">
+                <input type="number" placeholder="30" id="fifth-value" name="fifth-value" required>
                 <h6 class="print-calculator__col2-delete">Пример:<br>Книга с мягкой цветной обложкой<br>Тираж 30 шт<br>Ч/б печать внутренних страниц<br>Стоимость тиража 8 332 руб<br>Стоимость 1 штуки 277 руб</h6>
             </div>
             <div class="col print-calculator__col3">
                 <h3>Стоимость тиража</h3>
-                <h5 class="print-calculator__for-indent" >8 332 руб</h5>
-                <p id="result"></p>
-                <h5>277 руб <br> за 1 штуку</h5>
+                <h5 class="print-calculator__for-indent" id="result">8 332 руб</h5>
+                <h5 id="result1">277 руб <br> за 1 штуку</h5>
 
-                <script>
-                    // Получаем ссылки на элементы input и результат
-                    const input1 = document.getElementById('input1');
-                    const input2 = document.getElementById('input2');
-                    const input3 = document.getElementById('input3');
-                    const result = document.getElementById('result');
-
-                    // Добавляем обработчики событий на изменение значений input
-                    input1.addEventListener('input', calculate);
-                    input2.addEventListener('input', calculate);
-                    input3.addEventListener('input', calculate);
-
-                    // Функция расчета
-                    function calculate() {
-                    // Получаем значения из input
-                    const value1 = parseFloat(input1.value);
-                    const value2 = parseFloat(input2.value);
-                    const value3 = parseFloat(input3.value);
-
-                    // Проверяем, являются ли значения числами
-                    if (isNaN(value1) || isNaN(value2) || isNaN(value3)) {
-                        result.textContent = 'Введите числа во все поля';
-                        return;
-                    }
-
-                    // Производим расчет
-                    const sum = value1 + value2 + value3;
-                    const average = sum / 3;
-
-                    // Выводим результат
-                    result.textContent = `Сумма: ${sum}, Среднее: ${average.toFixed(2)}`;
-                    }
-                </script>
+                <script>const form = document.querySelector('#calculation-form');
+                    const resultEl = document.querySelector('#result');
+                    const resultEl1 = document.querySelector('#result1');
+                    
+                    form.addEventListener('submit', function(event) {
+                      event.preventDefault();
+                    });
+                    
+                    document.querySelectorAll('input').forEach(function(input) {
+                      input.addEventListener('input', function() {
+                        const firstValue = parseInt(document.querySelector('#first-value').value);
+                        const secondValue = parseInt(document.querySelector('#second-value').value);
+                        const thirdValue = parseInt(document.querySelector('#third-value').value);
+                        const fourthValue = parseInt(document.querySelector('#fourth-value').value);
+                        const fifthValue = parseInt(document.querySelector('#fifth-value').value);
+                    
+                        const result = (firstValue + secondValue + thirdValue + fourthValue) * fifthValue;
+                        const result1 = firstValue + secondValue + thirdValue + fourthValue;
+                    
+                        resultEl.textContent = `${result} руб`;
+                        resultEl1.textContent = `${result1} руб за 1 штуку`;
+                      });
+                    });</script>
                 <script>
                     function downloadFile(url){
                         var link = document.createElement('a');
@@ -478,27 +466,24 @@
                         but.addEventListener('click', function(){
                         downloadFile(but.getAttribute('data-path'));
                     })
-
-
-
-                document.addEventListener('DOMContentLoaded', function() {
-
-                // получим кнопку id="btn" с помощью которой будем открывать модальное окно
-                const btn = document.querySelector('#btn1');
-                // активируем контент id="modal" как модальное окно
-                const modal = new bootstrap.Modal(document.querySelector('#modal1'));
-                // при нажатии на кнопку
-                btn.addEventListener('click', function() {
-                    // открываем модальное окно
-                    modal.show();
-                });
-
-                });
                 </script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+        
+                    // получим кнопку id="btn" с помощью которой будем открывать модальное окно
+                    const btn = document.querySelector('#btn3');
+                    // активируем контент id="modal" как модальное окно
+                    const modal = new bootstrap.Modal(document.querySelector('#modal3'));
+                    // при нажатии на кнопку
+                    btn.addEventListener('click', function() {
+                    // открываем модальное окно
+                        modal.show();
+                    });
+                    });
+                </script>        
+                <button type="button" class="btn2 print-calculator__order" id="btn3">Заказать</button>
 
-                <button type="button" class="btn2 print-calculator__order" id="btn1">Заказать</button>
-
-                <div id="modal1" class="modal fade"> 
+                <div id="modal3" class="modal fade"> 
                     <div class="modal-dialog">
                         <div class="modal-content modal2">
                             <div class="modal-header">
@@ -535,53 +520,17 @@
                                 </div>
                                 <div class="row approval">
                                     <div class="col personal-data">
-                                        <input class="checkbox inp2" type="checkbox"> 
+                                        <input class="checkbox" type="checkbox"> 
                                         <p class="personal-data__a">Даю согласие на обработку своих персональных данных</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn send">Отправить</button>
+                                <button type="button" class="send">Отправить</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <!-- <button id="modalButton2" class="print-calculator__order">Заказать</button>
-                <div  id="myModal2" class="modal">
-                    <div class="modal-content2">
-                        <span class="close">&times;</span>
-                        <div class="container modal2">
-                            <div class="heading1"><h1>Заказать печать книги</h1> </div>
-                            <div class="row input1">
-                                <div class="col">
-                                    <p >Ваше имя</p>
-                                    <input class="inp" type="text" placeholder="Иван Иванов">
-                                    <p >Ваш e-mail</p>
-                                    <input class="inp" type="text" placeholder="ivanov@bk.ru">
-                                </div>
-                                <div class="col">
-                                    <p >Сообщение</p>
-                                    <input class="inp1" type="text" placeholder="">
-                                </div>
-                            </div>
-                            <div class="row attach">
-                                <div class="col">
-                                    <p >Прикрепить файлы</p>
-                                    <input class="button1 file" type="file"></button>
-                                </div>
-                            </div>
-                            <div class="row approval">
-                                    <input class="inp2" type="checkbox" placeholder="">
-                                    <p>Даю согласие на обработку своих персональных данных</p>
-                            </div>
-                            <div class="row sending">
-                                <button class="button2">Отправить</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -664,13 +613,13 @@
                             </div>
                             <div class="row approval">
                                 <div class="col personal-data">
-                                    <input class="checkbox inp2" type="checkbox"> 
+                                    <input class="checkbox" type="checkbox"> 
                                     <p class="personal-data__a">Даю согласие на обработку своих персональных данных</p>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn send">Отправить</button>
+                            <button type="button" class="send">Отправить</button>
                         </div>
                     </div>
                 </div>
@@ -826,9 +775,16 @@
 
         var modalButton1 = document.getElementById("modalButton1");
         var modalButton2 = document.getElementById("modalButton2");
+        var modalButton = document.getElementById("modalButton");
+        var modal = document.getElementById("myModal");
         var modal1 = document.getElementById("myModal1");
         var modal2 = document.getElementById("myModal2");
         var closeBtns = document.getElementsByClassName("close");
+
+        // Открываем модальное окно 1 при клике на кнопку 1
+        modalButton.onclick = function() {
+        modal.style.display = "block";
+        }
 
         // Открываем модальное окно 1 при клике на кнопку 1
         modalButton1.onclick = function() {
