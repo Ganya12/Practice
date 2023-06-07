@@ -722,19 +722,26 @@ nav label {
 .print-calculator__col1>h5, .print-calculator__col2>h5 {
     font-size: 18px;
     text-align: left;
-    color: #5a5959;
+    margin-bottom: 0;
 }
 
 .print-calculator__col2>h6 {
     text-align: center;
 }
 
-.print-calculator__col1>input, .print-calculator__col2>input {
+.print-calculator__col1>input, .print-calculator__col1>select, .print-calculator__col2>input {
     width: 260px;
     height: 50px;
     font-size: 24px;
     padding-left: 20px;
     margin: 10px 0 20px;
+    color: #5a5959;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .print-calculator__col3>h5 {
@@ -779,6 +786,27 @@ nav label {
     background: #c50000;
 }
 
+.attach input[type="file"] {
+  display: none;
+}
+
+.attach label {
+  display: inline-block;
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #5a5959;
+  border-radius: 4px;
+}
+
+.attach label:hover {
+  background-color: #fa3131;
+  color: #fff;
+}
+#file-name, #file-name1, #file-name2 {
+  display: inline-block;
+    margin: 12px 10px
+}
 
 
 
@@ -1071,7 +1099,7 @@ input {
 
 .left-side {
     text-align: left;
-    padding: 15px 0 5px;
+    padding: 12px 0 5px;
 }
 
 .button-download {
@@ -1204,8 +1232,8 @@ input {
 }
 .attach, .approval{
     display: flex;
-    margin-left: 11%;
     margin-top: 2%;
+    margin: 4% 0;
 }
 .approval>p {
     margin-left: 2%;

@@ -94,3 +94,37 @@ input {
 }
 
 
+.custom-file-upload input[type="file"] {
+    display: none;
+  }
+  
+  .custom-file-upload label {
+    display: inline-block;
+    padding: 12px 20px;
+    cursor: pointer;
+    background-color: #293241;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  .custom-file-upload label:hover {
+    background-color: #1e2532;
+  }
+  
+  #file-name {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  #upload-button {
+    margin-left: 10px;
+    padding: 12px 20px;
+    color: #fff;
+    background-color: #293241;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #upload-button:hover {
+    background-color: #1e2532;
+  }

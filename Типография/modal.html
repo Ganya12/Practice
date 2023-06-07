@@ -80,35 +80,65 @@
         </div>
     </div>
     
+    
+    
+    
+    <div>
+        <input type="checkbox" id="accept-terms" />
+        <label for="accept-terms">Я прочитал и принимаю условия использования</label>
+    </div>
+  <div class="custom-file-upload">
+    <input type="file" id="file-upload" />
+    <label for="file-upload">Выбрать файл</label>
+    <span id="file-name"></span>
+    <button id="upload-button" disabled>Загрузить</button>
+</div>
+
+
+
+<script>
+    const fileInput = document.getElementById("file-upload");
+const uploadButton = document.getElementById("upload-button");
+const fileName = document.getElementById("file-name");
+const acceptTerms = document.getElementById("accept-terms");
+
+acceptTerms.addEventListener("change", () => {
+  uploadButton.disabled = !acceptTerms.checked;
+});
+
+uploadButton.addEventListener("click", () => {
+  if (acceptTerms.checked) {
+    alert("Файл успешно отправлен!");
+  } else {
+    alert("Пожалуйста, примите условия использования");
+  }
+});
+
+fileInput.addEventListener("change", () => {
+  if (fileInput.value) {
+    fileName.textContent = fileInput.files[0].name;
+    uploadButton.disabled = !acceptTerms.checked;
+  } else {
+    fileName.textContent = "";
+    uploadButton.disabled = true;
+}
+});
+</script>
+<!-- <script>
+const acceptTerms = document.getElementById("accept-terms");
+const uploadButton = document.getElementById("upload-button");
+
+acceptTerms.addEventListener("change", () => {
+  uploadButton.disabled = !acceptTerms.checked;
+});
+
+uploadButton.addEventListener("click", () => {
+  if (acceptTerms.checked) {
+    alert("Файл успешно отправлен!");
+  } else {
+    alert("Пожалуйста, примите условия использования");
+  }
+});
+</script> -->
 </body>
 </html>
-
-
-<div class="container modal2">
-    <div class="heading1"><h1>Заказать печать книги</h1> </div>
-    <div class="row input1">
-        <div class="col">
-            <p >Ваше имя</p>
-            <input class="inp" type="text" placeholder="Иван Иванов">
-            <p >Ваш e-mail</p>
-            <input class="inp" type="text" placeholder="ivanov@bk.ru">
-        </div>
-        <div class="col">
-            <p >Сообщение</p>
-            <input class="inp1" type="text" placeholder="">
-        </div>
-    </div>
-    <div class="row attach">
-        <div class="col">
-            <p >Прикрепить файлы</p>
-            <input class="button1 file" type="file"></button>
-        </div>
-    </div>
-    <div class="row approval">
-            <input class="inp2" type="checkbox" placeholder="">
-            <p>Даю согласие на обработку своих персональных данных</p>
-    </div>
-    <div class="row sending">
-        <button class="button2">Отправить</button>
-    </div>
-</div>

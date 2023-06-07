@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./st.css">
+</head>
+<body>
+    <div>
+        <input type="checkbox" id="accept-terms" />
+        <label for="accept-terms">Я прочитал и принимаю условия использования</label>
+      </div>
+      
+      <div class="custom-file-upload">
+        <input type="file" id="file-upload" />
+        <label for="file-upload">Выбрать файл</label>
+        <span id="file-name"></span>
+      
+        <button id="upload-button" disabled>Отправить файл</button>
+      </div>
+
+      <script>
+        const fileInput = document.getElementById("file-upload");
+const uploadButton = document.getElementById("upload-button");
+const fileName = document.getElementById("file-name");
+const acceptTerms = document.getElementById("accept-terms");
+
+acceptTerms.addEventListener("change", () => {
+  uploadButton.disabled = !acceptTerms.checked;
+});
+
+uploadButton.addEventListener("click", () => {
+  if (!fileInput.value || !acceptTerms.checked) {
+    alert("Пожалуйста, выберите файл и примите условия использования");
+  } else {
+    alert("Файл успешно отправлен!");
+  }
+});
+
+fileInput.addEventListener("change", () => {
+  if (fileInput.value) {
+    fileName.textContent = fileInput.files[0].name;
+    uploadButton.disabled = !acceptTerms.checked;
+  } else {
+    fileName.textContent = "";
+    uploadButton.disabled = true;
+  }
+});
+      </script>
+</body>
+</html>
