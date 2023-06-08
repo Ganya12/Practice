@@ -5,42 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./st.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 <body>
-    <div>
-        <input type="checkbox" id="accept-terms" />
-        <label for="accept-terms">Я прочитал и принимаю условия использования</label>
-      </div>
-      
-      <div class="custom-file-upload">
-        <input type="file" id="file-upload" />
-        <label for="file-upload">Выбрать файл</label>
-        <span id="file-name"></span>
-      
-        <button id="upload-button" disabled>Отправить файл</button>
+  <div class="modal-content modal2">
+    <form class="row g-3 needs-validation" novalidate>
+      <div class="col">
+        <p class="bold left-side">Ваше имя</p>
+        <input type="text" class="form-control" placeholder="Иван Иванов" required>
+        <p class="bold left-side">Ваш e-mail</p>
+        <input type="text" class="form-control" placeholder="ivanov@bk.ru" required>
       </div>
 
-      <script>
-        const fileInput = document.getElementById("file-upload");
-const uploadButton = document.getElementById("upload-button");
-const fileName = document.getElementById("file-name");
-const acceptTerms = document.getElementById("accept-terms");
+      <div class="col">
+        <p class="bold-right1 left-side">Сообщение</p>
+        <div class="input-group has-validation">
+          <textarea type="text" class="form-control" aria-describedby="inputGroupPrepend" required></textarea>
+        </div>
+      </div>
+      <div class="row-3 attach">
+        <input class="file" type="file" name="" id="file-upload2">
+        <label for="file-upload2">Выбрать файл</label>
+        <span id="file-name2">файл не выбран</span>
+      </div>
+      <div class="col-12">
+        <div class="form-check personal-data">
+          <input class="form-check-input checkbox" type="checkbox" value=""  id="accept-terms2" required>
+          <label class="form-check-label personal-data__a" for="accept-terms2">
+            Даю согласие на обработку своих персональных данных
+          </label>
+        </div>
+      </div>
+      <div class="col-12 modal-footer">
+        <button class="btn btn-primary send" id="upload-button2" type="submit" disabled>Отправить</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+const inputs = form.querySelectorAll('input');
+const fileInput = document.getElementById("file-upload2");
+const uploadButton = document.getElementById("upload-button2");
+const fileName = document.getElementById("file-name2");
+const acceptTerms = document.getElementById("accept-terms2");
+
+form.addEventListener('submit', (event) => {
+  for (let input of inputs) {
+    if (!input.value) {
+      event.preventDefault();
+      alert('Пожалуйста заполните поля');
+      return;
+    }
+  }
+
+  if (!acceptTerms.checked || !fileInput.files[0]) {
+    event.preventDefault();
+    alert("Выберите файл и условия");
+  } else {
+    alert("Отправлено");
+  }
+});
 
 acceptTerms.addEventListener("change", () => {
   uploadButton.disabled = !acceptTerms.checked;
 });
 
 uploadButton.addEventListener("click", () => {
-  if (!fileInput.value || !acceptTerms.checked) {
-    alert("Пожалуйста, выберите файл и примите условия использования");
+  if (!acceptTerms.checked) {
+    alert("условия");
+  } else if (!fileInput.files[0]) {
+    alert("Выберите файл");
   } else {
-    alert("Файл успешно отправлен!");
+    alert("ЗАГРУЖЕНООО!");
   }
 });
 
 fileInput.addEventListener("change", () => {
-  if (fileInput.value) {
+  if (fileInput.files[0]) {
     fileName.textContent = fileInput.files[0].name;
     uploadButton.disabled = !acceptTerms.checked;
   } else {
@@ -48,6 +92,77 @@ fileInput.addEventListener("change", () => {
     uploadButton.disabled = true;
   }
 });
-      </script>
+  </script>
+
+
+
+  <!-- <script>
+    const form = document.querySelector('form');
+const inputs = form.querySelectorAll('input');
+
+form.addEventListener('submit', (event) => {
+  for (let input of inputs) {
+    if (!input.value) {
+      event.preventDefault();
+      alert('Please fill out all fields');
+      return;
+    }
+  }
+});
+  </script> -->
+
+
+  <!-- <script>
+    // Пример стартового JavaScript для отключения отправки форм при наличии недопустимых полей
+(function () {
+  'use strict'
+
+  // Получите все формы, к которым мы хотим применить пользовательские стили проверки Bootstrap
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Зацикливайтесь на них и предотвращайте отправку
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+  </script> -->
+
+
+<!-- <script>
+  const fileInput2 = document.getElementById("file-upload2");
+  const uploadButton2 = document.getElementById("upload-button2");
+  const fileName2 = document.getElementById("file-name2");
+  const acceptTerms2 = document.getElementById("accept-terms2");
+  
+  acceptTerms2.addEventListener("change", () => {
+  uploadButton2.disabled = !acceptTerms2.checked;
+  });
+  
+  uploadButton2.addEventListener("click", () => {
+  if (!fileInput2.value || !acceptTerms2.checked) {
+      alert("Пожалуйста, выберите файл и примите условия использования");
+  } else {
+      alert("Файл успешно отправлен!");
+  }
+  });
+  
+  fileInput2.addEventListener("change", () => {
+  if (fileInput2.value) {
+      fileName2.textContent = fileInput2.files[0].name;
+      uploadButton2.disabled = !acceptTerms2.checked;
+  } else {
+      fileName2.textContent = "";
+      uploadButton2.disabled = true;
+  }
+  }); -->
+</script>
 </body>
 </html>

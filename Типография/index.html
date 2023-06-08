@@ -509,16 +509,18 @@ fileInput.addEventListener("change", () => {
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="row input1">
-                                    <div class="col">
-                                        <p class="bold left-side">Ваше имя</p>
-                                        <input class="inp" type="text" placeholder="Иван Иванов">
-                                        <p class="bold left-side">Ваш e-mail</p>
-                                        <input class="inp" type="text" placeholder="ivanov@bk.ru">
-                                    </div>
-                                    <div class="col">
-                                        <p class="bold-right1 left-side">Сообщение</p>
-                                        <textarea class="inp1"> </textarea>
+                                <form class="row g-3 needs-validation" novalidate>
+                                <div class="col">
+                                    <p class="bold left-side">Ваше имя</p>
+                                    <input type="text" class="form-control" placeholder="Иван Иванов" required>
+                                    <p class="bold left-side">Ваш e-mail</p>
+                                    <input type="text" class="form-control" placeholder="ivanov@bk.ru" required>
+                                </div>
+                            
+                                <div class="col">
+                                    <p class="bold-right1 left-side">Сообщение</p>
+                                    <div class="input-group has-validation">
+                                    <textarea type="text" class="form-control" aria-describedby="inputGroupPrepend" required></textarea>
                                     </div>
                                 </div>
                                 <div class="row-3 attach">
@@ -526,15 +528,18 @@ fileInput.addEventListener("change", () => {
                                     <label for="file-upload2">Выбрать файл</label>
                                     <span id="file-name2">файл не выбран</span>
                                 </div>
-                                <div class="row">
-                                    <div class="col personal-data">
-                                        <input class="checkbox" id="accept-terms2" type="checkbox"> 
-                                        <label for="accept-terms2" class="personal-data__a">Даю согласие на обработку своих персональных данных</label>
+                                <div class="col-12">
+                                    <div class="form-check personal-data">
+                                    <input class="form-check-input checkbox" type="checkbox" value=""  id="accept-terms2" required>
+                                    <label class="form-check-label personal-data__a" for="accept-terms2">
+                                        Даю согласие на обработку своих персональных данных
+                                    </label>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button  class="send" id="upload-button2" disabled>Отправить </button>
+                                <div class="col-12 modal-footer">
+                                    <button class="btn btn-primary send" id="upload-button2" type="submit" disabled>Отправить</button>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -542,34 +547,56 @@ fileInput.addEventListener("change", () => {
             </div>
         </div>
     </div>
+
     <script>
-        const fileInput2 = document.getElementById("file-upload2");
-        const uploadButton2 = document.getElementById("upload-button2");
-        const fileName2 = document.getElementById("file-name2");
-        const acceptTerms2 = document.getElementById("accept-terms2");
-        
-        acceptTerms2.addEventListener("change", () => {
-        uploadButton2.disabled = !acceptTerms2.checked;
-        });
-        
-        uploadButton2.addEventListener("click", () => {
-        if (!fileInput2.value || !acceptTerms2.checked) {
-            alert("Пожалуйста, выберите файл и примите условия использования");
-        } else {
-            alert("Файл успешно отправлен!");
-        }
-        });
-        
-        fileInput2.addEventListener("change", () => {
-        if (fileInput2.value) {
-            fileName2.textContent = fileInput2.files[0].name;
-            uploadButton2.disabled = !acceptTerms2.checked;
-        } else {
-            fileName2.textContent = "";
-            uploadButton2.disabled = true;
-        }
-        });
-      </script>
+                        const form3 = document.querySelector('form');
+                        const inputs3 = form3.querySelectorAll('input');
+                        const fileInput3 = document.getElementById("file-upload2");
+                        const uploadButton3 = document.getElementById("upload-button2");
+                        const fileName3 = document.getElementById("file-name2");
+                        const acceptTerms3 = document.getElementById("accept-terms2");
+                        
+                        form3.addEventListener('submit', (event) => {
+                          for (let input of inputs3) {
+                            if (!input.value) {
+                              event.preventDefault();
+                              alert('Пожалуйста заполните поля');
+                              return;
+                            }
+                          }
+                        
+                          if (!acceptTerms3.checked || !fileInput3.files[0]) {
+                            event.preventDefault();
+                            alert("Выберите файл и условия");
+                          } else {
+                            alert("Отправлено");
+                          }
+                        });
+                        
+                        acceptTerms3.addEventListener("change", () => {
+                          uploadButton3.disabled = !acceptTerms3.checked;
+                        });
+                        
+                        uploadButton3.addEventListener("click", () => {
+                          if (!acceptTerms3.checked) {
+                            alert("условия");
+                          } else if (!fileInput3.files[0]) {
+                            alert("Выберите файл");
+                          } else {
+                            alert("ЗАГРУЖЕНООО!");
+                          }
+                        });
+                        
+                        fileInput3.addEventListener("change", () => {
+                          if (fileInput3.files[0]) {
+                            fileName3.textContent = fileInput3.files[0].name;
+                            uploadButton3.disabled = !acceptTerms3.checked;
+                          } else {
+                            fileName3.textContent = "";
+                            uploadButton3.disabled = true;
+                          }
+                        });
+                          </script>
 
     <div class="container make-book">
         <h2>Сделать книгу с нуля<a>(Есть файл в .doc)</a></h2>

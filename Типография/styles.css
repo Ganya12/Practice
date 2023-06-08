@@ -797,6 +797,7 @@ input::-webkit-inner-spin-button {
   background-color: #ffffff;
   color: #5a5959;
   border-radius: 4px;
+  border: 1px solid #4d4c4c;
 }
 
 .attach label:hover {
